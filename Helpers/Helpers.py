@@ -24,7 +24,7 @@ def color(string, status=True, warning=False, bold=True, blue=False, firewall=Fa
         attr.append('34')
     return '\x1b[%sm%s\x1b[0m' % (';'.join(attr), string)
 
-def formatLong(title, message, frontTab=True, spacing=16):
+def FormatLong(title, message, frontTab=True, spacing=16):
     """
     Print a long title:message with our standardized formatting.
     Wraps multiple lines into a nice paragraph format.

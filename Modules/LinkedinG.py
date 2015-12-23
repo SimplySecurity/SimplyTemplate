@@ -15,7 +15,9 @@ class TemplateModule:
     # Required for each class:
     self.Name = "Linkedin Group Invite"
     self.Author = "Killswitch-GUI"
-    self.Info = """Place the module info here"""
+    self.Info = """Linkedin uses a very common setup for group and user invites. This template 
+                   takes advantage of this and uses the Rich HTML from a real email. Places your data 
+                   into the template and generates a Html/Text Template for you."""
     self.Sophistication = "Medium" 
     # Required options for itself:
     self.RequiredOptions = {

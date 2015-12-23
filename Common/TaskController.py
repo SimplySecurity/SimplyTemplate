@@ -30,6 +30,11 @@ class Conducter:
                                 ("Author"),
                                 ("Sophistication:"),
                                 ("Info:")]
+        self.TemplateCommands = [   ("set","Set a option for the Template"),
+                                    ("info","Info about loaded Templates"),
+                                    ("gen","Generate Template"),
+                                    ("back","Go back to main Menu"),
+                                    ("exit","Exit SimplyTemplate")]
         
         # create required array
     
@@ -83,7 +88,9 @@ class Conducter:
                 # we will use this to select our module of choice
                 # it will call a seprate function to handle the Int
                 # of the requested module
-                self.ModuleSelection(Split)
+
+                Task = self.ModuleSelection(Split)
+                self.TemplateMenu(Task, Split)
             if Split[0].lower() == "info" or Split[0].lower() == "i":
                 self.ModuleInfo(Split)
         except Exception as e:
@@ -97,6 +104,10 @@ class Conducter:
                     print "\t[" + item[0] + "]\t" + item[1]
                 else:
                     print "\t[" + item[0] + "]\t\t" + item[1]
+            print "\n\tAvailiable Template Commands:"
+            print "\t-----------------------------------------"
+            for item in self.TemplateCommands:
+                print "\t[" + item[0] + "]\t\t" + item[1]
             self.PromptSelection()
         if a.lower() == "list" or a.lower() == "l":
             self.ListModules()
@@ -114,6 +125,7 @@ class Conducter:
         try:
             SelectedModule = self.Dmodules[ModuleInt]
             Task = SelectedModule.TemplateModule()
+            return Task
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number"
@@ -131,12 +143,61 @@ class Conducter:
                 task = "Task." + str(item.rstrip(":"))
                 if task == "Task.Sophistication":
                     print "\t" + item + "\t\t" + eval(task)
+                elif task == "Task.Info":
+                    print Helpers.FormatLong("Info:",Task.Info, spacing=24)
                 else:
                     print "\t" + item + "\t\t\t" + eval(task)
+            # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
+            # Taken from line 246
+            print Helpers.color("\n Template Required Options:\n", status=True)
+            print " Setting\t\tValue Set\t\tDescription of Setting"
+            print " -------\t\t---------\t\t----------------------"
+            for key in sorted(Task.RequiredOptions.iterkeys()):
+                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
         except Exception as e:
+            print e
             p = " [!] Please select a valid Module number\n"
             print Helpers.color(p, firewall=True)
             return
+
+    def ModuleRequiredOptions(self, selection):
+        ModuleInt = int(selection[1])
+        try:
+            SelectedModule = self.Dmodules[ModuleInt]
+            Task = SelectedModule.TemplateModule()
+            # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
+            # Taken from line 246
+            print Helpers.color("\n Template Required Options:\n", status=True)
+            print " Setting\t\tValue Set\t\tDescription of Setting"
+            print " -------\t\t---------\t\t----------------------"
+            for key in sorted(Task.RequiredOptions.iterkeys()):
+                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+        except Exception as e:
+            print e
+            p = " [!] Please select a valid Module number\n"
+            print Helpers.color(p, firewall=True)
+            return
+
+    def ModuleCommands(self):
+        print Helpers.color("\n Availiable Template Commands:\n", status=True)
+        print "\tCommand\t\tDescription"
+        print "\t-------\t\t-----------"
+        for item in self.TemplateCommands:
+            print "\t[" + item[0] + "]\t\t" + item[1]
+
+    def TemplateSet(self, template, value):
+        print "hi"
+
+
+    def TemplateMenu(self, Task, ModuleInt):
+        # start with Template menu and printing out the modules
+        self.TitleScreen()
+        p = "\n Template Loaded: " + Helpers.color(Task.Name, status=True)
+        print p + "\n\n"
+        self.ModuleRequiredOptions(ModuleInt)
+        self.ModuleCommands()
+
+
 
     def TaskSelector(self):
         # This will be the main controller of the framework
