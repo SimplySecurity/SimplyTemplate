@@ -20,6 +20,17 @@ class Conducter:
         self.Modules = {}
         self.Dmodules = {}
         self.LoadModules()
+        self.Commands = [   ("use","Select a template for use"),
+                            ("list","List loaded Templates"),
+                            ("info","Display metadata about a module"),
+                            ("update","Update SimplyTemplate from Github"),
+                            ("help","Display this menu"),
+                            ("exit","Exit SimplyTemplate")]
+        self.TemplateInfo =[   ("Name:"),
+                                ("Author"),
+                                ("Sophistication:"),
+                                ("Info:")]
+        
         # create required array
     
     def LoadModules(self):
@@ -54,12 +65,11 @@ class Conducter:
         print " Main Selection Menu\n"
         print "\t"+str(len(self.Modules))+" Email Template Loaded\n"
         print " Commands:\n"
-        print "\t[use]\t\tSelect a template for use"
-        print "\t[list]\t\tList loaded Templates"
-        print "\t[info]\t\tdisplay metadata about a module"
-        print "\t[update]\tUpdate SimplyTemplate from Github"
-        print "\t[help]\t\tDisplay this menu"
-        print "\t[exit]\t\tExit SimplyTemplate\n"
+        for item in self.Commands:
+            if item[0] == "update":
+                print "\t[" + item[0] + "]\t" + item[1]
+            else:
+                print "\t[" + item[0] + "]\t\t" + item[1]
 
     def PromptSelection(self):
         # We also have to strip off and verfiy the number
@@ -67,23 +77,26 @@ class Conducter:
         p = " [>] "
         a = raw_input(Helpers.color(p,status=True))
         # Gives me a list of words of ints
-        Split = Helpers.GetWords(a)
-        if Split[0].lower() == "use" or Split[0].lower() == "u":
-            # we will use this to select our module of choice
-            # it will call a seprate function to handle the Int
-            # of the requested module
-            self.ModuleSelection(a)
-        if a.lower() == "info" or a.lower() == "i":
-            print "here"
+        try:
+            Split = Helpers.GetWords(a)
+            if Split[0].lower() == "use" or Split[0].lower() == "u":
+                # we will use this to select our module of choice
+                # it will call a seprate function to handle the Int
+                # of the requested module
+                self.ModuleSelection(Split)
+            if Split[0].lower() == "info" or Split[0].lower() == "i":
+                self.ModuleInfo(Split)
+        except Exception as e:
+            print e 
+            pass
         if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
             print "\tAvailiable Commands:"
             print "\t-----------------------------------------"
-            print "\t[use]\t\tSelect a template for use"
-            print "\t[list]\t\tList loaded Templates"
-            print "\t[info]\t\tdisplay metadata about a module"
-            print "\t[update]\tUpdate SimplyTemplate from Github"
-            print "\t[help]\t\tDisplay this menu"
-            print "\t[exit]\t\tExit SimplyTemplate\n"
+            for item in self.Commands:
+                if item[0] == "update":
+                    print "\t[" + item[0] + "]\t" + item[1]
+                else:
+                    print "\t[" + item[0] + "]\t\t" + item[1]
             self.PromptSelection()
         if a.lower() == "list" or a.lower() == "l":
             self.ListModules()
@@ -97,7 +110,33 @@ class Conducter:
         return a
 
     def ModuleSelection(self, selection):
-        print "here"
+        ModuleInt = int(selection[1])
+        try:
+            SelectedModule = self.Dmodules[ModuleInt]
+            Task = SelectedModule.TemplateModule()
+        except Exception as e:
+            print e
+            p = " [!] Please select a valid Module number"
+            print Helpers.color(p, firewall=True)
+            return
+
+    def ModuleInfo(self, selection):
+        ModuleInt = int(selection[1])
+        try:
+            SelectedModule = self.Dmodules[ModuleInt]
+            Task = SelectedModule.TemplateModule()
+            self.TitleScreen()
+            print Helpers.color("\n Template Information:\n", status=True)
+            for item in self.TemplateInfo:
+                task = "Task." + str(item.rstrip(":"))
+                if task == "Task.Sophistication":
+                    print "\t" + item + "\t\t" + eval(task)
+                else:
+                    print "\t" + item + "\t\t\t" + eval(task)
+        except Exception as e:
+            p = " [!] Please select a valid Module number\n"
+            print Helpers.color(p, firewall=True)
+            return
 
     def TaskSelector(self):
         # This will be the main controller of the framework
