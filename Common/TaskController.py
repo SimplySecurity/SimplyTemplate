@@ -6,6 +6,7 @@ import sys
 import warnings
 import time
 import subprocess
+import re
 from Helpers import Helpers 
 
 
@@ -61,8 +62,19 @@ class Conducter:
         print "\t[exit]\t\tExit SimplyTemplate\n"
 
     def PromptSelection(self):
+        # We also have to strip off and verfiy the number
+        # make sure we strip when checking command
         p = " [>] "
         a = raw_input(Helpers.color(p,status=True))
+        # Gives me a list of words of ints
+        Split = Helpers.GetWords(a)
+        if Split[0].lower() == "use" or Split[0].lower() == "u":
+            # we will use this to select our module of choice
+            # it will call a seprate function to handle the Int
+            # of the requested module
+            self.ModuleSelection(a)
+        if a.lower() == "info" or a.lower() == "i":
+            print "here"
         if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
             print "\tAvailiable Commands:"
             print "\t-----------------------------------------"
@@ -77,13 +89,15 @@ class Conducter:
             self.ListModules()
             self.PromptSelection()
         if a.lower() == "update" or a.lower() == "u":
-            p = "[!] SimplyTemplate now Updating.."
-            print Helpers.color(p,status=True)
+            Helpers.SelfUpdate()
         if a.lower() == "exit":
             Helpers.Exit()
         else:
             self.PromptSelection()
         return a
+
+    def ModuleSelection(self, selection):
+        print "here"
 
     def TaskSelector(self):
         # This will be the main controller of the framework

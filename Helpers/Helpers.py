@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, sys, types, string, textwrap
+import os, sys, types, string, textwrap, subprocess, re
 
 def color(string, status=True, warning=False, bold=True, blue=False, firewall=False):
     """
@@ -63,9 +63,24 @@ def Exit():
     raise SystemExit
 
 def SelfUpdate():
-    p = "[!] SimplyTemplate now Updating.."
-    print color(p,status=True)
-    val = subprocess.check_output(("sudo", "git", "pull"),stdin=ps.stdout)
-    print val
-    val2 = subprocess.check_output(("sudo", "sh", "Setup.sh"),stdin=ps.stdout)
-    print val2
+    p = " [!] SimplyTemplate now Updating.."
+    print color(p,firewall=True)
+    try:
+        val = subprocess.check_output(("sudo", "git", "pull"))
+        print val
+    except Exception as e:
+        print e
+        print "Are we root?..."
+    try:
+        val2 = subprocess.check_output(("sudo", "sh", "Setup.sh"))
+        print val2
+    except Exception as e:
+        print e
+        print "Are we root?.."
+    p = " [!] Please restart SimplyTemplate.."
+    print color(p,firewall=True)
+    Exit()
+
+
+def GetWords(text):
+    return re.compile('\w+').findall(text)
