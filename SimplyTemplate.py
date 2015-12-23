@@ -3,6 +3,7 @@
 import os
 import argparse
 import sys
+from Common import TaskController
 
 def cli_parser():
     parser = argparse.ArgumentParser(add_help=False, description='''
@@ -20,14 +21,20 @@ def cli_parser():
         sys.exit()
     return args.l, args.v
 
-def TaskController():
-  
+def TaskManger():
+    # Get all the options passed and pass it to the TaskConducter, this will
+    # keep all the prcessing on the side.
+    # need to pass the store true somehow to tell printer to restrict output
+    cli_list, cli_verbose = cli_parser()
+    Task = TaskController.Conducter()
+    if cli_list:
+        Task.ListModules()
+        sys.exit(0)
+    Task.TaskSelector()
 
 def main():
     # instatiate the class
-    orc = TaskController.Conducter()
-    orc.title()
-    orc.title_screen()
+    TaskManger()
 
 if __name__ == "__main__":
     try:
