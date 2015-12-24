@@ -1,5 +1,6 @@
 import imp
 import glob
+import glob2
 import configparser
 import os
 import sys
@@ -46,7 +47,7 @@ class Conducter:
         # loop and assign key and name
         warnings.filterwarnings('ignore', '.*Parent module*',)
         x = 1
-        for name in glob.glob('Modules/*.py'):
+        for name in glob2.glob('Modules/**/*.py'):
             if name.endswith(".py") and ("__init__" not in name):
                 loaded_modules = imp.load_source(
                     name.replace("/", ".").rstrip('.py'), name)
