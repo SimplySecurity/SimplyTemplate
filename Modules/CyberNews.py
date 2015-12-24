@@ -12,11 +12,17 @@ import os
 class TemplateModule:
 
   def __init__(self):
+    # Meta Tags for file name and such:
+    self.OutputName = "LinkedinGroup.Html"
     # Required for each class:
-    self.Name = "Linkedin Group Invite"
+    self.Name = "Cyber News Letter"
     self.Author = "Killswitch-GUI"
-    self.Info = """Place the module info here"""
+    self.Type = "HTML/Text"
+    self.Info = """Linkedin uses a very common setup for group and user invites. This template 
+                   takes advantage of this and uses the Rich HTML from a real email. Places your data 
+                   into the template and generates a Html/Text Template for you."""
     self.Sophistication = "Medium" 
+    self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
     # Required options for itself:
     self.RequiredOptions = {
                               "FromFullName" : ["Jim Bob", "Contacts Full Name"],
@@ -28,5 +34,9 @@ class TemplateModule:
                               "GroupUrl" : ["""%URL%""", "Custom GroupURL or CS URL"],
                               "ProfilePic" : ["http://pic.com", "Custom GroupURL or CS URL"],
                             }
-  def Print(self):
+  def Generate(self, filename, location, Verbose=False):
+    # Gen will get 
+    # Filename = the name of the output
+    # Location = Where do you want to place the output
+    # Verbose = Print all help data
     print "hi"

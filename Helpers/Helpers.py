@@ -2,7 +2,7 @@
 
 import os, sys, types, string, textwrap, subprocess, re
 
-def color(string, status=True, warning=False, bold=True, blue=False, firewall=False):
+def color(string, status=True, warning=False, bold=True, blue=False, firewall=False, green=False):
     """
     Change text color for the linux terminal, defaults to green.
     Set "warning=True" for red.
@@ -12,6 +12,9 @@ def color(string, status=True, warning=False, bold=True, blue=False, firewall=Fa
     if status:
         # green
         attr.append('34')
+    if green:
+        # green
+        attr.append('32')
     if warning:
         # red
         attr.append('31')

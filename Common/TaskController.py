@@ -28,6 +28,7 @@ class Conducter:
                             ("exit","Exit SimplyTemplate")]
         self.TemplateInfo =[   ("Name:"),
                                 ("Author"),
+                                ("Type:"),
                                 ("Sophistication:"),
                                 ("SampleImage:"),
                                 ("Info:")]
@@ -133,7 +134,12 @@ class Conducter:
             for item in self.TemplateInfo:
                 task = "Task." + str(item.rstrip(":"))
                 if task == "Task.Sophistication":
-                    print "\t" + item + "\t\t" + eval(task)
+                    if eval(task).lower() == "high":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), green=True)
+                    if eval(task).lower() == "medium":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), firewall=True)
+                    if eval(task).lower() == "low":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), warning=True)
                 elif task == "Task.SampleImage":
                     print "\t" + item + "\t\t" + eval(task)
                 elif task == "Task.Info":
@@ -160,7 +166,12 @@ class Conducter:
             for item in self.TemplateInfo:
                 task = "Task." + str(item.rstrip(":"))
                 if task == "Task.Sophistication":
-                    print "\t" + item + "\t\t" + eval(task)
+                    if eval(task).lower() == "high":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), green=True)
+                    if eval(task).lower() == "medium":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), firewall=True)
+                    if eval(task).lower() == "low":
+                        print "\t" + item + "\t\t" + Helpers.color(eval(task), warning=True)
                 elif task == "Task.SampleImage":
                     print "\t" + item + "\t\t" + eval(task)
                 elif task == "Task.Info":
@@ -243,12 +254,46 @@ class Conducter:
             print e
             print Helpers.color(" [!] Error in setting option, likely invalid option name.", firewall=True)
 
+    def TemplateLocation(self):
+        '''
+        This function will return the location output 
+        This will default to the ~/Desktop/ folder
+        '''
+        while True:
+            try:
+                p = " [>] Output Location (Default ~/Desktop/):"
+                a = raw_input(Helpers.color(p,status=True))
+                if a != "" or a != " ":
+                    return a
+            except Exception as e:
+                print e
+
+    def TemplateName(self, Task):
+        '''
+        This function will return the location output 
+        This will default to the ~/Desktop/ folder
+        '''
+        while True:
+            try:
+                name = Task.OutputName
+                p = " [>] Output Name (Default: " + name + "):" 
+                a = raw_input(Helpers.color(p,status=True))
+                return a
+            except Exception as e:
+                print e
+
     def TemplateGen(self, Task):
         '''
         This Function takes in the template Task Object
         It will run the pre-defined Class Call
         '''
-        Task.Generate(Verbose=False)
+        try:
+            a = self.TemplateLocation()
+            name = self.TemplateName(Task)
+            Task.Generate(a, name, Verbose=False)
+        except Exception as e:
+            p = " [!] Major issue with template gen: " + str(e)
+            print Helpers.color(p, warning=True)
 
 
     def TemplateMenu(self, Task, ModuleInt):
