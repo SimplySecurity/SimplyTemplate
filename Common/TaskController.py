@@ -300,10 +300,8 @@ class Conducter:
             f = open("temp.html", 'w')
             f.write(EmailRender)
             f.close
-            path = os.getcwd()
-            path = path + "/temp.html"
             try:
-               Null = subprocess.check_call(["gnome-open", path])
+               Null = subprocess.check_call(["gnome-open", "temp.html"])
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file
