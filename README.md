@@ -26,6 +26,28 @@ root@kali:~/Desktop/SimplyTemplate# sh Setup.sh
 or
 root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 ```
+## Standard Commands
+```
+ [>] help
+  Availiable Commands:
+  -----------------------------------------
+  [use]     Select a template for use
+  [list]    List loaded Templates
+  [info]    Display metadata about a module
+  [update]  Update SimplyTemplate from Github
+  [help]    Display this menu
+  [exit]    Exit SimplyTemplate
+
+  Availiable Template Commands:
+  -----------------------------------------
+  [set]     Set a option for the Template
+  [info]    Info about loaded Templates
+  [gen]     Generate Template
+  [view]    View Sample Template
+  [back]    Go back to main Menu
+  [exit]    Exit SimplyTemplate
+ [>] 
+```
 
 ## Standard Startup
 ```
@@ -62,28 +84,6 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 
  [>] list
 ```
-## Display help Commands
-```
- [>] help
-  Availiable Commands:
-  -----------------------------------------
-  [use]   Select a template for use
-  [list]    List loaded Templates
-  [info]    Display metadata about a module
-  [update]  Update SimplyTemplate from Github
-  [help]    Display this menu
-  [exit]    Exit SimplyTemplate
-
-  Availiable Template Commands:
-  -----------------------------------------
-  [set]   Set a option for the Template
-  [info]    Info about loaded Templates
-  [gen]   Generate Template
-  [view]    View Sample Template
-  [back]    Go back to main Menu
-  [exit]    Exit SimplyTemplate
- [>] 
-```
 ## Use a module
 ```
  [>] use 2
@@ -100,8 +100,8 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 
  Template Required Options:
 
- Setting    Value Set   Description of Setting
- -------    ---------   ----------------------
+ Setting      Value Set   Description of Setting
+ -------      ---------   ----------------------
  FromFirstName    Jim         Contacts First Name
  FromFullName     Jim Bob     Contacts Full Name
  FromOrg          Veris Group, LLC    Contacts Company
@@ -123,3 +123,39 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
   [exit]    Exit SimplyTemplate
  [>]
  ```
+## Simply Use Set and Gen
+```
+ ============================================================
+ Current: v0.1 | SimplyTemplate | [Web]: CyberSyndicates.com
+ ============================================================
+   [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
+ ============================================================
+
+ Template Information:
+
+  Name:     Linkedin Group Invite
+  Author      Killswitch-GUI
+  Sophistication:   Medium
+  SampleImage:    Modules/Sample/LinkedinGroup.png
+  Info:                   Linkedin uses a very common setup for group and
+                          user invites. This template
+                          takes advantage of this and uses the Rich HTML
+                          from a real email. Places your data
+                          into the template and generates a Html/Text
+                          Template for you.
+
+ Template Required Options:
+
+ Setting    Value Set   Description of Setting
+ -------    ---------   ----------------------
+ FromFirstName    Jim         Contacts First Name
+ FromFullName     Jim Bob     Contacts Full Name
+ FromOrg          Veris Group, LLC    Contacts Company
+ FromProfileUrl   http://k.com    Linkedin Full Profile URL
+ FromTitle        CEO, ATD    Contacts Full Title
+ GroupName        Cyber Cyber Cyber   Requested Group to Join
+ GroupUrl         %URL%       Custom GroupURL or CS URL
+ ProfilePic       http://pic.com    Custom GroupURL or CS URL
+ [>] set FromOrg James Brown, LLC
+ [>] gen
+```
