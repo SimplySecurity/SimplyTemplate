@@ -133,10 +133,10 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 
  Template Information:
 
-  Name:     Linkedin Group Invite
-  Author      Killswitch-GUI
-  Sophistication:   Medium
-  SampleImage:    Modules/Sample/LinkedinGroup.png
+  Name:                   Linkedin Group Invite
+  Author                  Killswitch-GUI
+  Sophistication:         Medium
+  SampleImage:            Modules/Sample/LinkedinGroup.png
   Info:                   Linkedin uses a very common setup for group and
                           user invites. This template
                           takes advantage of this and uses the Rich HTML
