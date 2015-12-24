@@ -19,6 +19,7 @@ class TemplateModule:
                    takes advantage of this and uses the Rich HTML from a real email. Places your data 
                    into the template and generates a Html/Text Template for you."""
     self.Sophistication = "Medium" 
+    self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
     # Required options for itself:
     self.RequiredOptions = {
                               "FromFullName" : ["Jim Bob", "Contacts Full Name"],
@@ -30,5 +31,5 @@ class TemplateModule:
                               "GroupUrl" : ["""%URL%""", "Custom GroupURL or CS URL"],
                               "ProfilePic" : ["http://pic.com", "Custom GroupURL or CS URL"],
                             }
-  def Print(self):
+  def Generate(self, Verbose=False):
     print "hi"

@@ -11,7 +11,7 @@ def color(string, status=True, warning=False, bold=True, blue=False, firewall=Fa
     attr = []
     if status:
         # green
-        attr.append('32')
+        attr.append('34')
     if warning:
         # red
         attr.append('31')
