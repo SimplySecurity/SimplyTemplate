@@ -41,6 +41,7 @@ func_install_requests(){
   sudo git pull
   sudo apt-get -y install wget grep antiword odt2txt
   sudo pip install docx2txt --upgrade
+  sudo pip install configparser --upgrade
   chmod 755 SimplyTemplate.py
 
 }
