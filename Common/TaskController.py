@@ -36,6 +36,7 @@ class Conducter:
                                     ("info","Info about loaded Templates"),
                                     ("gen","Generate Template"),
                                     ("view","View Sample Template"),
+                                    ("render","Render Html of Email"),
                                     ("back","Go back to main Menu"),
                                     ("exit","Exit SimplyTemplate")]
         
@@ -263,7 +264,10 @@ class Conducter:
             try:
                 p = " [>] Output Location (Default ~/Desktop/):"
                 a = raw_input(Helpers.color(p,status=True))
-                if a != "" or a != " ":
+                if a:
+                    return a
+                else:
+                    a = "/root/Desktop/"
                     return a
             except Exception as e:
                 print e
@@ -278,9 +282,35 @@ class Conducter:
                 name = Task.OutputName
                 p = " [>] Output Name (Default: " + name + "):" 
                 a = raw_input(Helpers.color(p,status=True))
-                return a
+                if a:
+                    return a
+                else:
+                    a = name
+                    return a
             except Exception as e:
                 print e
+
+    def TemplateRender(self, Task):
+        '''
+        This function will return the location output 
+        This will default to the ~/Desktop/ folder
+        '''
+        try:
+            EmailRender = Task.Render()
+            f = open("temp.html", 'w')
+            f.write(EmailRender)
+            f.close
+            path = os.getcwd()
+            path = path + "/temp.html"
+            try:
+               Null = subprocess.check_call(["gnome-open", path])
+            except Exception as e:
+                print Helpers.color(" [!] Is a default browser installed?")
+            # now remove temp file
+            time.sleep(3)
+            os.remove("temp.html")
+        except Exception as e:
+            print e
 
     def TemplateGen(self, Task):
         '''
@@ -322,6 +352,8 @@ class Conducter:
                     self.Template_Info(Task)
                 if a.lower() == "view" or a.lower() == "v":
                     self.TemplateView(Task)
+                if a.lower() == "render" or a.lower() == "r":
+                    self.TemplateRender(Task)
                 if a.lower() == "back" or a.lower() == "b":
                     self.TaskSelector()
                 if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
