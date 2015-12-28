@@ -14,6 +14,7 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "LinkedinGroup.Html"
+    self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Linkedin Group Invite"
     self.Author = "Killswitch-GUI"
@@ -89,3 +90,4 @@ class TemplateModule:
         outputEmail = outputEmail.replace(dummy, value)
 
     return outputEmail
+

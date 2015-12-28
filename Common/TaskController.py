@@ -59,7 +59,9 @@ class Conducter:
 
     def ListModules(self):
         self.TitleScreen()
-        print Helpers.color(" [*] Available Modules are:\n", blue=True)
+        print Helpers.color("  [*] Available Modules are:\t\t\t\tCore Options:", blue=True)
+        print " --------------------------\t\t\t\t-------------"
+
         lastBase = None
         x = 1
         for name in self.Modules:
@@ -67,7 +69,9 @@ class Conducter:
             if lastBase and parts[0] != lastBase:
                 print ""
             lastBase = parts[0]
-            print "\t%s)\t%s" % (x, '{0: <24}'.format(name))
+            SelectedModule = self.Modules[name]
+            Task = SelectedModule.TemplateModule()
+            print "  %s)  %s" % (x, '{0: <24}'.format(name)) + "\t\t" + Task.CoreOptions
             x += 1
         print ""
 
@@ -77,9 +81,11 @@ class Conducter:
         print " Commands:\n"
         for item in self.Commands:
             if item[0] == "update":
-                print "\t[" + item[0] + "]\t" + item[1]
+                # print "\t[" + item[0] + "]\t" + item[1]
+                print "\t[{0}]\t{1}".format(item[0],item[1])
             else:
-                print "\t[" + item[0] + "]\t\t" + item[1]
+                # print "\t[" + item[0] + "]\t\t" + item[1]
+                print "\t[{0}]\t\t{1}".format(item[0],item[1])
 
     def PromptSelection(self):
         # We also have to strip off and verfiy the number
@@ -137,9 +143,9 @@ class Conducter:
                 task = "Task." + str(item.rstrip(":"))
                 if task == "Task.Sophistication":
                     if eval(task).lower() == "high":
-                        print "\t" + item + "\t\t" + Helpers.color(eval(task), green=True)
+                        print "\t{0}\t\t{1}".format(item, Helpers.color(eval(task), green=True))
                     if eval(task).lower() == "medium":
-                        print "\t" + item + "\t\t" + Helpers.color(eval(task), firewall=True)
+                        print "\t{0}\t\t{1}".format(item, Helpers.color(eval(task), firewall=True))
                     if eval(task).lower() == "low":
                         print "\t" + item + "\t\t" + Helpers.color(eval(task), warning=True)
                 elif task == "Task.SampleImage":
@@ -311,18 +317,59 @@ class Conducter:
         except Exception as e:
             print e
 
-    def TemplateGen(self, Task):
+    def TemplateRequiredOptions(self, Task):
+        '''
+        Function for required option for "only" a template.
+        '''
+        try:
+            # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
+            # Taken from line 246
+            print Helpers.color("\n Template Required Options:\n", status=True)
+            print " Setting\t\tValue Set\t\tDescription of Setting"
+            print " -------\t\t---------\t\t----------------------"
+            for key in sorted(Task.RequiredOptions.iterkeys()):
+                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+        except Exception as e:
+            print e
+            p = " [!] Please select a valid Module number\n"
+            print Helpers.color(p, firewall=True)
+            return
+
+    def TemplateGen(self, Task, ModuleInt):
         '''
         This Function takes in the template Task Object
         It will run the pre-defined Class Call
         '''
         try:
-            a = self.TemplateLocation()
-            name = self.TemplateName(Task)
-            Task.Generate(a, name, Verbose=False)
+            FileLocation = self.TemplateLocation()
+            Name = self.TemplateName(Task)
+            Task.Generate(FileLocation, Name, Verbose=False)
+            self.TemplateCompleteScreen(Task, FileLocation, Name, ModuleInt)
         except Exception as e:
             p = " [!] Major issue with template gen: " + str(e)
             print Helpers.color(p, warning=True)
+
+    def TemplateCompleteScreen(self, Task, FileLocation, FileName, ModuleInt):
+        '''
+        Function takes in output data and presents it to user.
+        '''
+        self.TitleScreen()
+        p = " [*] Email Template Generation has been completed:\n"
+        line = """{0}
+           Task Performed:\t\t{1}
+           File Location: \t\t{2}
+           Email File:\t\t\t{3}
+        """.format(Helpers.color(p, green=True),Task.Name,FileLocation,FileName)
+        print line 
+        p = Helpers.color(" [>] ", status=True) + "Would you like to return to Current Module? (y) or (n): "
+        while True:
+            a = raw_input(p)
+            if a.lower() == "y":
+                self.TemplateMenu(Task, ModuleInt)
+                break
+            if a.lower() == "n":
+                self.TaskSelector()
+        print line 
 
 
     def TemplateMenu(self, Task, ModuleInt):
@@ -330,7 +377,7 @@ class Conducter:
         self.TitleScreen()
         p = "\n Template Loaded: " + Helpers.color(Task.Name, status=True)
         print p + "\n\n"
-        self.ModuleRequiredOptions(ModuleInt)
+        self.TemplateRequiredOptions(Task)
         self.ModuleCommands()
         while True:
             try:
@@ -345,7 +392,7 @@ class Conducter:
                         print e
                         print Helpers.color(" [!] You must use [set] with Value", firewall=True)
                 if a.lower() == "gen" or a.lower() == "g" or a.lower() == "run":
-                    self.TemplateGen(Task)
+                    self.TemplateGen(Task, ModuleInt)
                 if a.lower() == "info" or a.lower() == "i":
                     print "here"
                     self.Template_Info(Task)
