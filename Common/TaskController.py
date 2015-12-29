@@ -24,6 +24,7 @@ class Conducter:
         self.Commands = [   ("use","Select a template for use"),
                             ("list","List loaded Templates"),
                             ("info","Display metadata about a module"),
+                            ("search","Search by Core Options / Sophistication"),
                             ("update","Update SimplyTemplate from Github"),
                             ("help","Display this menu"),
                             ("exit","Exit SimplyTemplate")]
@@ -59,8 +60,8 @@ class Conducter:
 
     def ListModules(self):
         self.TitleScreen()
-        print Helpers.color("  [*] Available Modules are:\t\t\t\tCore Options:", blue=True)
-        print " --------------------------\t\t\t\t-------------"
+        print Helpers.color("\n  [*] Available Modules are:\t\t\t\tCore Options:\t\t\tSophistication:", blue=True)
+        print " --------------------------\t\t\t\t-------------\t\t\t---------------"
 
         lastBase = None
         x = 1
@@ -71,7 +72,7 @@ class Conducter:
             lastBase = parts[0]
             SelectedModule = self.Modules[name]
             Task = SelectedModule.TemplateModule()
-            print "  %s)  %s" % (x, '{0: <24}'.format(name)) + "\t\t" + Task.CoreOptions
+            print "  %s)  %s" % (x, '{0: <24}'.format(name)) + "\t\t" + Task.CoreOptions + "\t\t[" + Task.Sophistication + "]"
             x += 1
         print ""
 
@@ -80,7 +81,10 @@ class Conducter:
         print "\t"+str(len(self.Modules))+" Email Template Loaded\n"
         print " Commands:\n"
         for item in self.Commands:
-            if item[0] == "update":
+            if item[0] == "search":
+                # print "\t[" + item[0] + "]\t" + item[1]
+                print "\t[{0}]\t{1}".format(item[0],item[1])
+            elif item[0] == "update":
                 # print "\t[" + item[0] + "]\t" + item[1]
                 print "\t[{0}]\t{1}".format(item[0],item[1])
             else:
