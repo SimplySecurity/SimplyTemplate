@@ -78,7 +78,7 @@ class Conducter:
 
     def MainMenu(self):
         print " Main Selection Menu\n"
-        print "\t"+str(len(self.Modules))+" Email Template Loaded\n"
+        print "\t"+str(len(self.Modules))+" Email Templates Loaded\n"
         print " Commands:\n"
         for item in self.Commands:
             if item[0] == "search":
@@ -109,10 +109,14 @@ class Conducter:
             if Split[0].lower() == "info" or Split[0].lower() == "i":
                 self.ModuleInfo(Split)
         except Exception as e:
-            print e 
             pass
         if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
             self.ModuleHelp()
+        try:
+            if Split[0].lower() == "search" or Split[0].lower() == "s":
+                self.ModuleSearch(Split)
+        except Exception as e:
+            pass
         if a.lower() == "list" or a.lower() == "l":
             self.ListModules()
             self.PromptSelection()
@@ -123,6 +127,67 @@ class Conducter:
         else:
             self.PromptSelection()
         return a
+
+    def ModuleSearch(self, SearchTerm):
+        '''
+        Takes in a array of strings and searched by them
+        '''
+        SophisticationList = []
+        CoreOptionsList = []
+        if SearchTerm[1]:
+            try:
+                for name in self.Modules:
+                    SelectedModule = self.Modules[name]
+                    Task = SelectedModule.TemplateModule()
+                    Sophistication = Task.Sophistication
+                    if SearchTerm[1].lower() in Sophistication.lower():
+                        # add in the matching Result
+                        SophisticationList.append(str(name))
+            except Exception as e:
+                print e
+
+        if SearchTerm[1]:
+            try:
+                for name in self.Modules:
+                    SelectedModule = self.Modules[name]
+                    Task = SelectedModule.TemplateModule()
+                    CoreOptions = Task.CoreOptions
+                    if SearchTerm[1] in CoreOptions.lower():
+                        # add in the matching Result
+                        CoreOptionsList.append(str(name))
+            except Exception as e:
+                print e
+
+        self.ListSearchModules(CoreOptionsList, SophisticationList)
+
+
+    def ListSearchModules(self, ModuleList, ModuleList2):
+        '''
+        Takes an array of Modules to print rather than all modules.
+        '''
+        self.TitleScreen()
+        if ModuleList:
+            print Helpers.color("\n  [*] Core Options Search Results are:\t\t\tCore Options:\t\tSophistication:", blue=True)
+            print "      --------------------------------\t\t\t-------------\t\t---------------"
+            x = 1
+            for name in ModuleList:
+                SelectedModule = self.Modules[name]
+                Task = SelectedModule.TemplateModule()
+                print "\n  %s" % (Helpers.color('{0: <24}'.format(name), status=True)) + "\t\t" + Helpers.color(Task.CoreOptions, status=True) + "\t[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
+                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                x += 1
+            print ""
+        if ModuleList2:
+            print Helpers.color("\n  [*] Sophistication Search Results are:\t\tCore Options:\t\tSophistication:", blue=True)
+            print "     ----------------------------------\t\t\t-------------\t\t---------------"
+            x = 1
+            for name in ModuleList2:
+                SelectedModule = self.Modules[name]
+                Task = SelectedModule.TemplateModule()
+                print "\n  %s" % (Helpers.color('{0: <24}'.format(name), status=True)) + "\t\t" + Helpers.color(Task.CoreOptions, status=True) + "\t[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
+                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                x += 1
+            print ""
 
     def ModuleSelection(self, selection):
         ModuleInt = int(selection[1])
