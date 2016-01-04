@@ -65,6 +65,8 @@ class Conducter:
 
         lastBase = None
         x = 1
+        print self.Modules
+        print self.Dmodules
         for name in self.Modules:
             parts = name.split("/")
             if lastBase and parts[0] != lastBase:
