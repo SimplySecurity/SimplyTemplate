@@ -1,0 +1,46 @@
+From: FROM_FULL_NAME <FROM_EMAIL>
+Subject: CUR_YEAR Payscale Guidelines
+To: 
+
+Content-type: multipart/alternative;
+  boundary="B_3535697399_1371369990"
+
+--B_3535697399_1371369990
+Content-type: text/plain;
+  charset="UTF-8"
+Content-transfer-encoding: 7bit
+
+The TARGET_COMP_NAME Office of Human Resources has formalized the CUR_QUATER - CUR_YEAR enhanced bonus structure and compensation policy for the beginning of the year. 
+
+The updated guidelines are available at TARGET_LINK. 
+
+Regards, 
+TARGET_HR_DIR 
+Director of Human Resources 
+
+--B_3535697399_1371369990
+Content-type: text/html;
+  charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body>
+The TARGET_COMP_NAME Office of Human Resources has formalized the CUR_QUATER - CUR_YEAR enh=
+anced bonus structure and compensation policy for the beginning of the year.
+<br>
+<br>
+The updated guidelines are available at TARGET_LINK.
+<br>
+<br>
+Regards, <br>
+TARGET_HR_DIR <br>
+Director of Human Resources
+</body>
+</html>
+
+
+--B_3535697399_1371369990--
+

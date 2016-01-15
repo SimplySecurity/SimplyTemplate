@@ -175,7 +175,7 @@ class Conducter:
             for name in ModuleList:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
-                print "\n  %s" % (Helpers.color('{0: <24}'.format(name), status=True)) + "\t\t" + Helpers.color(Task.CoreOptions, status=True) + "\t[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
+                print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
                 print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
                 x += 1
             print ""
@@ -186,7 +186,7 @@ class Conducter:
             for name in ModuleList2:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
-                print "\n  %s" % (Helpers.color('{0: <24}'.format(name), status=True)) + "\t\t" + Helpers.color(Task.CoreOptions, status=True) + "\t[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
+                print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
                 print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
                 x += 1
             print ""
@@ -326,7 +326,7 @@ class Conducter:
             else:
                 Raw = Raw.strip(Value[0])
                 Raw = Raw.lstrip(' ')
-                Raw = Raw.strip(Value[1])
+                Raw = Raw.lstrip(Value[1])
                 Raw = Raw.lstrip(' ')
                 Task.RequiredOptions[option][0] = Raw
                 return
