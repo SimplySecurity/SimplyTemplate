@@ -44,23 +44,25 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 ## Standard Commands
 ```
  [>] help
-  Availiable Commands:
-  -----------------------------------------
-  [use]     Select a template for use
-  [list]    List loaded Templates
-  [info]    Display metadata about a module
-  [update]  Update SimplyTemplate from Github
-  [help]    Display this menu
-  [exit]    Exit SimplyTemplate
+	Availiable Commands:
+	-----------------------------------------
+	[use]		Select a template for use
+	[list]		List loaded Templates
+	[info]		Display metadata about a module
+	[search]		Search by Core Options / Sophistication
+	[update]	Update SimplyTemplate from Github
+	[help]		Display this menu
+	[exit]		Exit SimplyTemplate
 
-  Availiable Template Commands:
-  -----------------------------------------
-  [set]     Set a option for the Template
-  [info]    Info about loaded Templates
-  [gen]     Generate Template
-  [view]    View Sample Template
-  [back]    Go back to main Menu
-  [exit]    Exit SimplyTemplate
+	Availiable Template Commands:
+	-----------------------------------------
+	[set]		Set a option for the Template
+	[info]		Info about loaded Templates
+	[gen]		Generate Template
+	[view]		View Sample Template
+	[render]		Render Html of Email
+	[back]		Go back to main Menu
+	[exit]		Exit SimplyTemplate
  [>] 
 ```
 
@@ -73,16 +75,17 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
  ============================================================
  Main Selection Menu
 
-  2 Email Template Loaded
+	6 Email Templates Loaded
 
  Commands:
 
-  [use]   Select a template for use
-  [list]    List loaded Templates
-  [info]    Display metadata about a module
-  [update]  Update SimplyTemplate from Github
-  [help]    Display this menu
-  [exit]    Exit SimplyTemplate
+	[use]		Select a template for use
+	[list]		List loaded Templates
+	[info]		Display metadata about a module
+	[search]	Search by Core Options / Sophistication
+	[update]	Update SimplyTemplate from Github
+	[help]		Display this menu
+	[exit]		Exit SimplyTemplate
  [>] 
 ```
 ## List Modules
@@ -92,51 +95,54 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
  ============================================================
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
- [*] Available Modules are:
 
-  1)  Modules/CyberNews.py    
-  2)  Modules/LinkedinGroup.py
+  [*] Available Modules are:		                         	Core Options:			                Sophistication:
+  -------------------------				                         -------------			                ---------------
+  1)  Modules/Internal/Hr/SocialMediaPolicy.py          [Text, Html, Attachment]        [Low]
+  2)  Modules/Internal/Hr/PayScaleBonusGuideline.py     [Text, Html, Link]              [Low]
+  3)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
+  4)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
+  5)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
+  6)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
 
- [>] list
+ [>] List
+
 ```
 ## Use a module
 ```
- [>] use 2
-
  ============================================================
  Current: v0.1 | SimplyTemplate | [Web]: CyberSyndicates.com
  ============================================================
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
 
- Template Loaded: Linkedin Group Invite
+ Template Loaded: Pay Scale and Bonus Guideline Basic Link
 
 
 
  Template Required Options:
 
- Setting      Value Set   Description of Setting
- -------      ---------   ----------------------
- FromFirstName    Jim         Contacts First Name
- FromFullName     Jim Bob     Contacts Full Name
- FromOrg          Veris Group, LLC    Contacts Company
- FromProfileUrl   http://k.com    Linkedin Full Profile URL
- FromTitle        CEO, ATD    Contacts Full Title
- GroupName        Cyber Cyber Cyber   Requested Group to Join
- GroupUrl         %URL%       Custom GroupURL or CS URL
- ProfilePic       http://pic.com    Custom GroupURL or CS URL
+ Setting		             Value Set			                     Description of Setting
+ -------		             ---------			                     ----------------------
+ CurrentQuater          Q1                              Current Fiscal Quater
+ CurrentYear            2016                            Current Year
+ FromEmail              noreply@agency.com              From Email
+ HrDirector             Ray Mongo                       The full name of the Director of HR
+ TargetCompany          Cyber Power                     Set the Target Company Full Name
+ Url                    %URL%                           Link to payload or stat collection
 
  Availiable Template Commands:
 
-  Command   Description
-  -------   -----------
-  [set]   Set a option for the Template
-  [info]    Info about loaded Templates
-  [gen]   Generate Template
-  [view]    View Sample Template
-  [back]    Go back to main Menu
-  [exit]    Exit SimplyTemplate
- [>]
+	Command		Description
+	-------		-----------
+	[set]           Set a option for the Template
+	[info]          Info about loaded Templates
+	[gen]           Generate Template
+	[view]          View Sample Template
+	[render]        Render Html of Email
+	[back]          Go back to main Menu
+	[exit]          Exit SimplyTemplate
+ [>] 
  ```
 ## Simply Use Set and Gen
 ```
