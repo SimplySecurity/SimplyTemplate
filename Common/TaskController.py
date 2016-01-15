@@ -8,6 +8,7 @@ import warnings
 import time
 import subprocess
 import re
+import collections
 from Helpers import Helpers 
 
 
@@ -18,8 +19,9 @@ class Conducter:
         # Create dictionaries of supported modules
         # empty until stuff loaded into them
         # stolen from Veil :)
-        self.Modules = {}
-        self.Dmodules = {}
+        # Create a ordered dict: or the state isnt postive
+        self.Modules = collections.OrderedDict()
+        self.Dmodules = collections.OrderedDict()
         self.LoadModules()
         self.Commands = [   ("use","Select a template for use"),
                             ("list","List loaded Templates"),
@@ -65,8 +67,6 @@ class Conducter:
 
         lastBase = None
         x = 1
-        print self.Modules
-        print self.Dmodules
         for name in self.Modules:
             parts = name.split("/")
             if lastBase and parts[0] != lastBase:
@@ -74,7 +74,7 @@ class Conducter:
             lastBase = parts[0]
             SelectedModule = self.Modules[name]
             Task = SelectedModule.TemplateModule()
-            print "  %s)  %s" % (x, '{0: <24}'.format(name)) + "\t\t" + Task.CoreOptions + "\t\t[" + Task.Sophistication + "]"
+            print "  %s)  %s" % (x, '{0: <24}'.format(name).ljust(50)) + Task.CoreOptions.ljust(32) + "[" + Task.Sophistication + "]"
             x += 1
         print ""
 
@@ -228,10 +228,11 @@ class Conducter:
             # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
             # Taken from line 246
             print Helpers.color("\n Template Required Options:\n", status=True)
-            print " Setting\t\tValue Set\t\tDescription of Setting"
-            print " -------\t\t---------\t\t----------------------"
+            print " Setting\t\tValue Set\t\t\tDescription of Setting"
+            print " -------\t\t---------\t\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
-                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                # print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number\n"
@@ -260,10 +261,10 @@ class Conducter:
             # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
             # Taken from line 246
             print Helpers.color("\n Template Required Options:\n", status=True)
-            print " Setting\t\tValue Set\t\tDescription of Setting"
-            print " -------\t\t---------\t\t----------------------"
+            print " Setting\t\tValue Set\t\t\tDescription of Setting"
+            print " -------\t\t---------\t\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
-                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number\n"
@@ -281,7 +282,7 @@ class Conducter:
             print " Setting\t\tValue Set\t\tDescription of Setting"
             print " -------\t\t---------\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
-                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                print " %s%s%s" % ('{0: <16}'.format(key).ljust(10), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(30), Task.RequiredOptions[key][1])
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number\n"
@@ -307,7 +308,7 @@ class Conducter:
         print "\tCommand\t\tDescription"
         print "\t-------\t\t-----------"
         for item in self.TemplateCommands:
-            print "\t[" + item[0] + "]\t\t" + item[1]
+            print "\t%s%s" % ('{0: <16}'.format("["+item[0]+"]").ljust(5), '{0: <16}'.format(item[1]))
 
     def TemplateView(self, Task):
         FileName = Task.SampleImage
@@ -396,10 +397,10 @@ class Conducter:
             # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
             # Taken from line 246
             print Helpers.color("\n Template Required Options:\n", status=True)
-            print " Setting\t\tValue Set\t\tDescription of Setting"
-            print " -------\t\t---------\t\t----------------------"
+            print " Setting\t\tValue Set\t\t\tDescription of Setting"
+            print " -------\t\t---------\t\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
-                print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number\n"
