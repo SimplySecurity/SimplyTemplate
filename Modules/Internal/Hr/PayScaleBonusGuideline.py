@@ -22,7 +22,7 @@ class TemplateModule:
     self.Info = """A very simple email template using a standard link from a user
                    Asking them to check out the new Bonus and Pay standards from HR."""
     self.Sophistication = "Low" 
-    self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
+    self.SampleImage = str('''Modules/Sample/BonusPayScale.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/PayScaleBonusGuideline.email''')
     # Required options for itself:
     self.RequiredOptions = {

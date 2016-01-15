@@ -22,7 +22,7 @@ class TemplateModule:
     self.Info = """A very simple email template using a Attahment to deliver
                    Payload and asking them to sign the OLE PDF."""
     self.Sophistication = "Low" 
-    self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
+    self.SampleImage = str('''Modules/Sample/SocialMediaPolicy.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/SocialMediaPolicy.email''')
     # Required options for itself:
     self.RequiredOptions = {
@@ -72,5 +72,4 @@ class TemplateModule:
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)
-
     return outputEmail

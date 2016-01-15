@@ -63,7 +63,7 @@ class Conducter:
     def ListModules(self):
         self.TitleScreen()
         print Helpers.color("\n  [*] Available Modules are:\t\t\t\tCore Options:\t\t\tSophistication:", blue=True)
-        print " --------------------------\t\t\t\t-------------\t\t\t---------------"
+        print "  -------------------------\t\t\t\t-------------\t\t\t---------------"
 
         lastBase = None
         x = 1
@@ -380,7 +380,8 @@ class Conducter:
             f.write(EmailRender)
             f.close
             try:
-               Null = subprocess.check_call(["gnome-open", "temp.html"])
+                time.sleep(1)
+                subprocess.check_call(["gnome-open", "temp.html"])
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file

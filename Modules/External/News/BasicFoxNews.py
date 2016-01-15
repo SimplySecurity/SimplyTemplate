@@ -22,7 +22,7 @@ class TemplateModule:
     self.Info = """A very simple email template using a standard link from a user
                    Asking them to open a news article."""
     self.Sophistication = "Low" 
-    self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
+    self.SampleImage = str('''Modules/Sample/FoxNews.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/FoxNewsBasicTemplate.email''')
     # Required options for itself:
     self.RequiredOptions = {
