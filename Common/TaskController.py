@@ -318,7 +318,11 @@ class Conducter:
         try:
             subprocess.check_call(["xdg-open", FileName])
         except Exception as e:
-            print Helpers.color(" [!] Is a default image viewer installed?")
+            s = "status 4"
+            if s in str(e):
+                print Helpers.color(" [!] Sorry no image submited yet!")
+            else:
+                print Helpers.color(" [!] Is a default image viewer installed?")
 
     def TemplateSet(self, Task, Value, Raw):     
         try:
