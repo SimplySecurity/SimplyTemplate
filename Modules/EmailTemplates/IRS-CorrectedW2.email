@@ -1,0 +1,57 @@
+From: IRS-No-Reply <FROM_EMAIL>
+Date:
+Subject: IRS-W2 Corrections
+To: 
+Content-type: multipart/alternative;
+  boundary="B_3539793613_1473794394"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3539793613_1473794394
+Content-type: text/plain;
+  charset="UTF-8"
+Content-transfer-encoding: 7bit
+
+Dear User,
+
+
+Sir / Madam, the IRS just received an electronic notice from your employer of a W-2c (W-2 Corrected). This email is in correspondence to inform you that (change / update) may be needed for your TAX_YEAR tax return. Please follow the link to be informed of your rights and instructions to refile your return.
+
+
+TARGET_LINK
+
+
+Sorry for any inconvenience this has caused.
+
+
+Thanks,
+Internal Revenue Service
+
+
+--B_3539793613_1473794394
+Content-type: text/html;
+  charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body>
+<p>Dear User,</p>
+<br>
+<p>Sir / Madam, the IRS just received an electronic notice from your employer of a W-2c (W-2 Corrected). This email is in correspondence to inform you that (change / update) may be needed for your TAX_YEAR tax return. Please follow the link to be informed of your rights and instructions to refile your return.</p>
+<br>
+<p><a href=3D"TARGET_LINK">CorrectedW2-Instructions</a> or TARGET_LINK</p>
+<br>
+<p>Sorry for any inconvenience this has caused.</p>
+<br>
+<p>Thanks,<br>
+Internal Revenue Service</p>
+</body>
+</html>
+
+
+--B_3539793613_1473794394--
+
