@@ -1,0 +1,12 @@
+MIME-Version: 1.0
+From: FROM_NAME <FROM_EMAIL>
+Date:
+Subject: --- Notice of Monitoring ---
+To: 
+
+<p>The TARGET_COMP_NAME Security Operations Center (SOC) has determined that your workstation has attempted on several occasions to browse web content that is forbidden by TARGET_COMP_NAME Security Policy.</p>
+<p>Because of this activity the Client Services Implementation Team will begin reviewing all of your web usage logs. We will also need you to review the usage logs and complete a verification poll provided below. If you did not make these requests then the TARGET_COMP_NAME Security Operations Center will review your systems for potential malware.</p>
+<p>Please open the following URL <a href="TARGET_LINK">here</a> and answer the questions provided. This should take no longer than 10 minutes to complete this poll. Please be as accurate as possible when answering these questions.</p>
+<p>If you have any further questions, please contact your TARGET_COMP_NAME Information Security Officer through the contact link at the website located <a href="TARGET_LINK">here</a>.</p>
+<p>Thank you,</p>
+<p>TARGET_COMP_NAME Security Operations Center </p>

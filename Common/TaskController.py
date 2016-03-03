@@ -62,8 +62,8 @@ class Conducter:
 
     def ListModules(self):
         self.TitleScreen()
-        print Helpers.color("\n  [*] Available Modules are:\t\t\t\tCore Options:\t\t\tSophistication:", blue=True)
-        print "  -------------------------\t\t\t\t-------------\t\t\t---------------"
+        print Helpers.color("\n  [*] Available Modules are:\t\t\t\t Core Options:\t\t\tSophistication:", blue=True)
+        print "  -------------------------\t\t\t\t -------------\t\t\t---------------"
 
         lastBase = None
         x = 1
@@ -74,7 +74,10 @@ class Conducter:
             lastBase = parts[0]
             SelectedModule = self.Modules[name]
             Task = SelectedModule.TemplateModule()
-            print "  %s)  %s" % (x, '{0: <24}'.format(name).ljust(50)) + Task.CoreOptions.ljust(32) + "[" + Task.Sophistication + "]"
+            if x < 10:
+                print "  %s)   %s" % (str(x).ljust(1), '{0: <24}'.format(name).ljust(50)) + Task.CoreOptions.ljust(32) + "[" + Task.Sophistication + "]"
+            if x >= 10:
+                print "  %s)  %s" % (str(x).ljust(1), '{0: <24}'.format(name).ljust(50)) + Task.CoreOptions.ljust(32) + "[" + Task.Sophistication + "]"
             x += 1
         print ""
 

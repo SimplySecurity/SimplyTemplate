@@ -1,0 +1,10 @@
+MIME-Version: 1.0
+From: FROM_NAME <FROM_EMAIL>
+Date: 
+Subject: Salary Guidelines CUR_YEAR
+To:
+
+<p>OPM has just released salary guidelines for the CUR_YEAR fiscal year. TARGET_COMP_NAME will follow the updated guidance provided by OPM to determine future salary requirements.</p>
+<p>You can navigate to OPM's website and view the salary guidance at the following link: <a href="TARGET_URL">OPM CUR_YEAR Salary Guidance</a></p>
+<p>Thank you,</p>
+<p>TARGET_COMP_NAME Office of Human Capital Management (OHCM)</p>

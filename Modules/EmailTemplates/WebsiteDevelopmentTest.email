@@ -1,0 +1,12 @@
+MIME-Version: 1.0
+From: FROM_NAME <FROM_EMAIL>
+Date: 
+Subject: ACTION REQUIRED TARGET_COMP_NAME Website Development Test
+To: 
+
+<p>Good Morning,</p>
+<p>During the normal course of operations, TARGET_COMP_NAMEs development team continuously updates our website, and tests all updates to ensure no issues are introduced.  As part of the Quality Assurance (QA) process, our Development team requested that a group of internal users help test the website before it is placed in production.</p>
+<p>Please navigate to the <a href="TARGET_LINK">QA Website</a> and verify that all sections pertaining to your responsibilities are accurately reflected, and inform us of any issues you experience while interacting with the website.</p> 
+<p>We thank you for your time and participation. Your help will allow the development team to streamline the QA process, enabling more rapid deployments of website content and features in the future.</p>
+<p>Thank you,</p>
+<p>TARGET_COMP_NAME IT Development Team</p>
