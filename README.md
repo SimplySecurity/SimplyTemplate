@@ -129,20 +129,23 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
 
- Template Loaded: Pay Scale and Bonus Guideline Basic Link
+ Template Loaded: CFO Policy update to bonus.
 
 
 
  Template Required Options:
 
- Setting		             Value Set			                     Description of Setting
- -------		             ---------			                     ----------------------
- CurrentQuater          Q1                              Current Fiscal Quater
- CurrentYear            2016                            Current Year
+ Setting		Value Set			Description of Setting
+ -------		---------			----------------------
+ FromCFOName            Alex Jason                      The Target CFO Full Name
  FromEmail              noreply@agency.com              From Email
- HrDirector             Ray Mongo                       The full name of the Director of HR
+ FromRealEmail          alex@target.com                 The Target CFO real email
+ FromTitle              Chief Financial Officer         Set the OSINT name gathered title
+ TargetAddress          123 Street Las Vegas, NV, 12345 Set the Target Company Addr
  TargetCompany          Cyber Power                     Set the Target Company Full Name
- Url                    %URL%                           Link to payload or stat collection
+ TargetLogo             http://Target.com/logo.png      Set the Target Logo
+ TargetPhone            1-800-CD-FOUR                   Set the Target Toll Free line
+ TargetWebLink          Target.com                      Set the real target web link
 
  Availiable Template Commands:
 
