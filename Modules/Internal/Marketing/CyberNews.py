@@ -19,7 +19,7 @@ class TemplateModule:
     self.Name = "Cyber News Letter"
     self.Author = "Killswitch-GUI"
     self.Type = "HTML/Text"
-    self.Sophistication = "Medium" 
+    self.Sophistication = "High" 
     self.Info = """Using a custom news letter is common by HR and other depts.
                    By setting up a proper and common HTML email you can easily 
                    get clicks and less likely to be reported."""

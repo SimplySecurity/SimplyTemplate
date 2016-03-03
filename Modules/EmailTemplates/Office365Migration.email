@@ -1,0 +1,62 @@
+From: Tech Support <FROM_EMAIL>
+To:
+Subject: Office 365 Migration  
+Date: 
+MIME-Version: 1.0
+
+Content-type: multipart/alternative;
+  boundary="B_3539797358_38210523"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3539797358_38210523
+Content-type: text/plain;
+  charset="UTF-8"
+Content-transfer-encoding: 7bit
+
+
+Team, 
+
+We are excited to announce that information systems is currently in the process of migrating everyone to Office 365 in order to increase reliability and ease of access. Last night we did the initial migration and account sync. Continue using Outlook/Exchange  until you hear otherwise, but if you want to login and check it out visit TARGET_LINK. Use your current windows credentials to login. 
+
+Please let us know should you experience any difficulty.
+
+
+Technical Support
+Department of Technical Operations
+TARGET_COMP_NAME, TARGET_LOCATION
+TARGET_PHONE
+ 
+CONFIDENTIALITY NOTICE: This e-mail message, including any attachments, is for the sole use of the intended recipient(s) and may contain confidential and privileged information or otherwise be protected by law. Any unauthorized review, use, disclosure or distribution  is prohibited. If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message. 
+
+--B_3539797358_38210523
+Content-type: text/html;
+  charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html>
+<body>
+<div>Team,</div>
+<br>
+<div>We are excited to announce that information systems is currently in the process of migrating everyone to Office 365 in order to increase reliability and ease of access. Last night we did the initial migration and account sync. Continue using Outlook/Exchange until you hear otherwise, but if you want to login and check it out visit <a href=3D"TARGET_LINK" id=3D"LPlnk200330"> TARGET_COMP_NAME Office 365 Mail</a>. Use your current windows credentials to login.
+</div>
+<br>
+<div>Please let us know should you experience any difficulty.</div>
+<br>
+<br>
+<div>Technical Support<br>
+Department of Technical Operations<br>
+TARGET_COMP_NAME, TARGET_LOCATION<br>
+TARGET_PHONE<br>
+<img src=3D"TARGET_LOGO_LINK"> </div>
+</div>
+</div>
+</div>
+CONFIDENTIALITY NOTICE: This e-mail message, including any attachments, is for the sole use of the intended recipient(s) and may contain confidential and privileged information or otherwise be protected by law. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message.
+</body>
+</html>
+
+
+--B_3539797358_38210523--
+

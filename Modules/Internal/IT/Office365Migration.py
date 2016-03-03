@@ -13,25 +13,25 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "PayScaleBonusGuideline.Html"
+    self.OutputName = "Office365Migration.Html"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
-    self.Name = "Pay Scale and Bonus Guideline Basic Link"
+    self.Name = "Office 365 Migration email from IT"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """A very simple email template using a standard link from a user
-                   Asking them to check out the new Bonus and Pay standards from HR."""
-    self.Sophistication = "Medium" 
-    self.SampleImage = str('''Modules/Sample/BonusPayScale.png''')
-    self.TemplatePath = str('''Modules/EmailTemplates/PayScaleBonusGuideline.email''')
+    self.Info = """This Targeted email works great with the correct Domain Name, 
+                  and primary research to ensure that the target is using Office365 MX
+                  Records of SPF TXT Records."""
+    self.Sophistication = "High" 
+    self.SampleImage = str('''Modules/Sample/Office365Migration.png''')
+    self.TemplatePath = str('''Modules/EmailTemplates/Office365Migration.email''')
     # Required options for itself:
     self.RequiredOptions = {
-                              "HrDirector" : ["Ray Mongo", "The full name of the Director of HR"],
-                              "FromEmail" : ["noreply@agency.com", "From Email"],
-                              "CurrentYear" : ["2016", "Current Year"],
-                              "CurrentQuater" : ["Q1", "Current Fiscal Quater"],
                               "TargetCompany" : ["Cyber Power", "Set the Target Company Full Name" ],
-                              "Url" : ["""%URL%""","Link to payload or stat collection"],
+                              "TargetLocation" : ["Las Vegas", "Set the Target Company State" ],
+                              "TargetPhone" : ["1-800-CD-FOUR", "Set the Target Toll Free line" ],
+                              "TargetLogo" : ["http://Target.com/logo.png", "Set the Target Logo" ],
+                              "FromEmail" : ["noreply@agency.com", "From Email"],
                             }
   def Generate(self, filename, location, Verbose=False):
     # Gen will get 
@@ -40,12 +40,11 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
       'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
-      'CUR_YEAR'   : self.RequiredOptions["CurrentYear"][0],
-      'CUR_QUATER'    : self.RequiredOptions["CurrentQuater"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
-      'TARGET_LINK' : self.RequiredOptions["Url"][0],
+      'TARGET_LOGO' : self.RequiredOptions["TargetLogo"][0],
+      'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
+      'TARGET_LOCATION' : self.RequiredOptions["TargetLocation"][0],
       }
     WritePath =  str(filename) + str(location)
 
@@ -68,12 +67,11 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
       'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
-      'CUR_YEAR'   : self.RequiredOptions["CurrentYear"][0],
-      'CUR_QUATER'    : self.RequiredOptions["CurrentQuater"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
-      'TARGET_LINK' : self.RequiredOptions["Url"][0],
+      'TARGET_LOGO' : self.RequiredOptions["TargetLogo"][0],
+      'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
+      'TARGET_LOCATION' : self.RequiredOptions["TargetLocation"][0],
       }
 
     with open(self.TemplatePath, 'r') as templateEmail:
@@ -81,5 +79,4 @@ class TemplateModule:
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)
-
     return outputEmail
