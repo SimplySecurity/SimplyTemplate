@@ -24,15 +24,15 @@ All templates will provide you with a small meta tag. This tag will help you qui
 capabilities of the module, also what the "content" supports.
 
 Sophistication Levels:
-- High= Requires proper OSINT / SE to build and effectively deploy the template. These are generally internal based templates with specific themes.
-- Medium= Requires a decent amount of modifications or settings, and are more general of a template external based template.
-- Low= Requires little to no modifications of the template and are generally not effective.
+- High = Requires proper OSINT / SE to build and effectively deploy the template. These are generally internal based templates with specific themes.
+- Medium = Requires a decent amount of modifications or settings, and are more general of a template external based template.
+- Low = Requires little to no modifications of the template and are generally not effective.
 
 Core Options:
-- Text= Text based option or output.
-- Html= Rich Html Supported for output (generally multipart Email Html/Text).
-- Link= Template supports a major link for stats or potential web download of document/Drive-by.
-- Attachment= Can support text that tells users to open or use the supplied attachment.
+- Text = Text based option or output.
+- Html = Rich Html Supported for output (generally multipart Email Html/Text).
+- Link = Template supports a major link for stats or potential web download of document/Drive-by.
+- Attachment = Can support text that tells users to open or use the supplied attachment.
 
 ## Get Started
 Please RUN the simple Setup Bash script!!!
@@ -96,17 +96,16 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
 
-  [*] Available Modules are:		                         	Core Options:			                Sophistication:
-  -------------------------				                         -------------			                ---------------
+  [*] Available Modules are:				Core Options:			Sophistication:
+  -------------------------				-------------			---------------
   1)  Modules/Internal/Hr/SocialMediaPolicy.py          [Text, Html, Attachment]        [Low]
   2)  Modules/Internal/Hr/PayScaleBonusGuideline.py     [Text, Html, Link]              [Low]
-  3)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
-  4)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
-  5)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
-  6)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
-
- [>] List
-
+  3)  Modules/Internal/Hr/HRTaxCorectionW2.py           [Text, Html, Link]              [Medium]
+  4)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
+  5)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
+  6)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
+  7)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
+  8)  Modules/External/Agency/IRS-CorrectedW2.py        [Text, Html, Link]              [Low]
 ```
 ## Use a module
 ```
@@ -154,29 +153,29 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 
  Template Information:
 
-  Name:                   Linkedin Group Invite
-  Author                  Killswitch-GUI
-  Sophistication:         Medium
-  SampleImage:            Modules/Sample/LinkedinGroup.png
-  Info:                   Linkedin uses a very common setup for group and
-                          user invites. This template
-                          takes advantage of this and uses the Rich HTML
-                          from a real email. Places your data
-                          into the template and generates a Html/Text
-                          Template for you.
+	Name:			Cyber News Letter
+	Author			Killswitch-GUI
+	Type:			HTML/Text
+	Sophistication:		Medium
+	SampleImage:		Modules/Sample/CyberNewsLetter.png
+	Info:                   Using a custom news letter is common by HR and
+	                        other depts.                    By setting up a
+	                        proper and common HTML email you can easily
+	                        get clicks and less likely to be reported.
 
  Template Required Options:
 
- Setting    Value Set   Description of Setting
- -------    ---------   ----------------------
- FromFirstName    Jim         Contacts First Name
- FromFullName     Jim Bob     Contacts Full Name
- FromOrg          Veris Group, LLC    Contacts Company
- FromProfileUrl   http://k.com    Linkedin Full Profile URL
- FromTitle        CEO, ATD    Contacts Full Title
- GroupName        Cyber Cyber Cyber   Requested Group to Join
- GroupUrl         %URL%       Custom GroupURL or CS URL
- ProfilePic       http://pic.com    Custom GroupURL or CS URL
+ Setting		Value Set			Description of Setting
+ -------		---------			----------------------
+ FromFirstName          Jim                             Contacts First Name
+ FromFullName           Jim Bob                         Contacts Full Name
+ FromOrg                Veris Group, LLC                Contacts Company
+ FromProfileUrl         http://k.com                    Linkedin Full Profile URL
+ FromTitle              CEO, ATD                        Contacts Full Title
+ GroupName              Cyber Cyber Cyber               Requested Group to Join
+ GroupUrl               %URL%                           Custom GroupURL or CS URL
+ ProfilePic             http://tinyurl.com/oewvyo7      Custom GroupURL or CS URL
+
  [>] set FromOrg James Brown, LLC
  [>] gen
 ```
