@@ -98,16 +98,28 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
 
-  [*] Available Modules are:				Core Options:			Sophistication:
-  -------------------------				-------------			---------------
-  1)  Modules/Internal/Hr/SocialMediaPolicy.py          [Text, Html, Attachment]        [Low]
-  2)  Modules/Internal/Hr/PayScaleBonusGuideline.py     [Text, Html, Link]              [Low]
-  3)  Modules/Internal/Hr/HRTaxCorectionW2.py           [Text, Html, Link]              [Medium]
-  4)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
-  5)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
-  6)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
-  7)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
-  8)  Modules/External/Agency/IRS-CorrectedW2.py        [Text, Html, Link]              [Low]
+  [*] Available Modules are:				 Core Options:			Sophistication:
+  -------------------------				 -------------			---------------
+  1)   Modules/Internal/Leadership/AppleEncryptionFBI.py [Text, Html, Link]              [Low]
+  2)   Modules/Internal/Leadership/CFOBonusStructure.py  [Html, Attachment]              [High]
+  3)   Modules/Internal/IT/NoticeofMonitoring.py         [Html, Link]                    [Low]
+  4)   Modules/Internal/IT/BlockedWebsite.py             [Html, Link]                    [Medium]
+  5)   Modules/Internal/IT/WebsiteDevelopmentTest.py     [Html, Link]                    [Low]
+  6)   Modules/Internal/IT/PhishingAlert.py              [Html, Link]                    [Low]
+  7)   Modules/Internal/IT/Office365Migration.py         [Text, Html, Link]              [High]
+  8)   Modules/Internal/Facilities/BuildingInspection.py [Html, Link]                    [Low]
+  9)   Modules/Internal/Agency/GovBudgetReduction.py     [Html, Link]                    [Medium]
+  10)  Modules/Internal/Hr/TelecommuteOpportunities.py   [Text, Html, Link]              [High]
+  11)  Modules/Internal/Hr/SocialMediaPolicy.py          [Text, Html, Attachment]        [Medium]
+  12)  Modules/Internal/Hr/PayScaleBonusGuideline.py     [Text, Html, Link]              [Medium]
+  13)  Modules/Internal/Hr/HRTaxCorectionW2.py           [Text, Html, Link]              [Medium]
+  14)  Modules/Internal/Hr/WellnessProgram.py            [Html, Link]                    [Low]
+  15)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
+  16)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [High]
+  17)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
+  18)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
+  19)  Modules/External/Agency/OPMSalaryGuidelines.py    [Html, Link]                    [Medium]
+  20)  Modules/External/Agency/IRS-CorrectedW2.py        [Text, Html, Link]              [Low]
 ```
 ## Use a module
 ```
