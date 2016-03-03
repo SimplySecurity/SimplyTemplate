@@ -379,12 +379,13 @@ class Conducter:
         '''
         try:
             EmailRender = Task.Render()
-            f = open("temp.html", 'w')
-            f.write(EmailRender)
-            f.close
+            # print EmailRender
+            with open("temp.html", "wr") as myfile:
+                myfile.write(EmailRender)
             try:
                 time.sleep(1)
                 subprocess.check_call(["gnome-open", "temp.html"])
+                #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file

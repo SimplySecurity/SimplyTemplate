@@ -13,18 +13,17 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "NoticeofMonitoring.Html"
+    self.OutputName = "BuildingInspection.Html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
-    self.Name = "IT Dev team alert on website updates."
+    self.Name = "Facility testing for mold contamination."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A quick template that informs user that they will be monitored for past
-                    browsing history within their Company. This will try to get them to answer a
-                    few questions"""
+    self.Info = """A template that informs users about testing the facility for mold contamination,
+                    while asking the userbase for potential illiness."""
     self.Sophistication = "Low" 
-    self.SampleImage = str('''Modules/Sample/NoticeofMonitoring.png''')
-    self.TemplatePath = str('''Modules/EmailTemplates/NoticeofMonitoring.email''')
+    self.SampleImage = str('''Modules/Sample/BuildingInspection.png''')
+    self.TemplatePath = str('''Modules/EmailTemplates/BuildingInspection.email''')
     # Required options for itself:
     self.RequiredOptions = {
                               "FromEmail" : ["noreply@agency.com", "From Email"],
