@@ -96,17 +96,16 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
    [Twitter]: @real_slacker007 | [Twitter]: @Killswitch_gui
  ============================================================
 
-  [*] Available Modules are:		                         	Core Options:			                Sophistication:
-  -------------------------				                         -------------			                ---------------
+  [*] Available Modules are:				Core Options:			Sophistication:
+  -------------------------				-------------			---------------
   1)  Modules/Internal/Hr/SocialMediaPolicy.py          [Text, Html, Attachment]        [Low]
   2)  Modules/Internal/Hr/PayScaleBonusGuideline.py     [Text, Html, Link]              [Low]
-  3)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
-  4)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
-  5)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
-  6)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
-
- [>] List
-
+  3)  Modules/Internal/Hr/HRTaxCorectionW2.py           [Text, Html, Link]              [Medium]
+  4)  Modules/Internal/Hr/HRNewsArticle.py              [Text, Html, Link]              [Medium]
+  5)  Modules/Internal/Marketing/CyberNews.py           [Text, Html, Link]              [Medium]
+  6)  Modules/External/Social/LinkedinGroup.py          [Text, Html, Link]              [Medium]
+  7)  Modules/External/News/BasicFoxNews.py             [Text, Link]                    [Low]
+  8)  Modules/External/Agency/IRS-CorrectedW2.py        [Text, Html, Link]              [Low]
 ```
 ## Use a module
 ```
