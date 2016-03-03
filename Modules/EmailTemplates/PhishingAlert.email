@@ -1,0 +1,11 @@
+MIME-Version: 1.0
+From: FROM_NAME <FROM_EMAIL>
+Date: 
+Subject: TARGET_COMP_NAME Security Alert (Phishing)
+To: 
+
+<p>The TARGET_COMP_NAME IT Security team has detected several active phishing campaigns that are targeting internal TARGET_COMP_NAME staff. These campaigns have been running through internal TARGET_COMP_NAME email for several weeks and are prompting users to click on URLs embedded within the email. The security team has been tracking these emails and has made a report available to you for review. Please take a moment to review these email subjects and report any suspicious emails you may be receiving. </p>
+<p><a href="TARGET_LINK">Phishing Tracking Center</a></p> 
+<p>Remember to not click on links within any emails from untrusted sources.</p>
+<p>Thank you,</p>
+<p>TARGET_COMP_NAME IT Security Team</p>

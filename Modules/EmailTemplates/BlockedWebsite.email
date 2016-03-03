@@ -1,0 +1,13 @@
+MIME-Version: 1.0
+From: FROM_NAME <FROM_EMAIL>
+Date: 
+Subject: Blocked Website Detected 
+To: 
+Content-Type: text/plain; charset=ISO-8859-1
+
+<p><b>NOTICE:</b> It has been determined that your workstation is attempting to browse multiple blocked websites and we need your verification.<p>
+<p><b>DATE:</b> Starting TODAYS_DATE.</p>
+<p><b>SUBJECT:</b> If you did not make these requests, it is possible that your system has been compromised. Starting TODAYS_DATE, the Client Services Implementation Team will be reviewing your answers to the verification poll below. If you did not make these requests, the TARGET_COMP_NAME Security Operations Center (SOC) will need to remotely review your system for anomalies. If you were the one attempting to access these sites, no action will be taken and you are only asked to respect IT security policies in the future.</p>
+<p><b>REMEDIATION:</b> Please click the following link to answer a few simple questions: <a href="TARGET_LINK">Security Questions</a></p>
+<p><b>CONTACT:</b> Please contact your TARGET_COMP_NAME Information Security Officer through the contact link at the website listed above.</p>
+<p>TARGET_COMP_NAME Security Operations Center (SOC)<br>TARGET_PHONE</p>
