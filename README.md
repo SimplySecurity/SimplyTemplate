@@ -24,15 +24,15 @@ All templates will provide you with a small meta tag. This tag will help you qui
 capabilities of the module, also what the "content" supports.
 
 Sophistication Levels:
-- High= Requires proper OSINT / SE to build and effectively deploy the template. These are generally internal based templates with specific themes.
-- Medium= Requires a decent amount of modifications or settings, and are more general of a template external based template.
-- Low= Requires little to no modifications of the template and are generally not effective.
+- High = Requires proper OSINT / SE to build and effectively deploy the template. These are generally internal based templates with specific themes.
+- Medium = Requires a decent amount of modifications or settings, and are more general of a template external based template.
+- Low = Requires little to no modifications of the template and are generally not effective.
 
 Core Options:
-- Text= Text based option or output.
-- Html= Rich Html Supported for output (generally multipart Email Html/Text).
-- Link= Template supports a major link for stats or potential web download of document/Drive-by.
-- Attachment= Can support text that tells users to open or use the supplied attachment.
+- Text = Text based option or output.
+- Html = Rich Html Supported for output (generally multipart Email Html/Text).
+- Link = Template supports a major link for stats or potential web download of document/Drive-by.
+- Attachment = Can support text that tells users to open or use the supplied attachment.
 
 ## Get Started
 Please RUN the simple Setup Bash script!!!
