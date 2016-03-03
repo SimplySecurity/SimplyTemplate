@@ -153,29 +153,29 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
 
  Template Information:
 
-  Name:                   Linkedin Group Invite
-  Author                  Killswitch-GUI
-  Sophistication:         Medium
-  SampleImage:            Modules/Sample/LinkedinGroup.png
-  Info:                   Linkedin uses a very common setup for group and
-                          user invites. This template
-                          takes advantage of this and uses the Rich HTML
-                          from a real email. Places your data
-                          into the template and generates a Html/Text
-                          Template for you.
+	Name:			Cyber News Letter
+	Author			Killswitch-GUI
+	Type:			HTML/Text
+	Sophistication:		Medium
+	SampleImage:		Modules/Sample/CyberNewsLetter.png
+	Info:                   Using a custom news letter is common by HR and
+	                        other depts.                    By setting up a
+	                        proper and common HTML email you can easily
+	                        get clicks and less likely to be reported.
 
  Template Required Options:
 
- Setting    Value Set   Description of Setting
- -------    ---------   ----------------------
- FromFirstName    Jim         Contacts First Name
- FromFullName     Jim Bob     Contacts Full Name
- FromOrg          Veris Group, LLC    Contacts Company
- FromProfileUrl   http://k.com    Linkedin Full Profile URL
- FromTitle        CEO, ATD    Contacts Full Title
- GroupName        Cyber Cyber Cyber   Requested Group to Join
- GroupUrl         %URL%       Custom GroupURL or CS URL
- ProfilePic       http://pic.com    Custom GroupURL or CS URL
+ Setting		Value Set			Description of Setting
+ -------		---------			----------------------
+ FromFirstName          Jim                             Contacts First Name
+ FromFullName           Jim Bob                         Contacts Full Name
+ FromOrg                Veris Group, LLC                Contacts Company
+ FromProfileUrl         http://k.com                    Linkedin Full Profile URL
+ FromTitle              CEO, ATD                        Contacts Full Title
+ GroupName              Cyber Cyber Cyber               Requested Group to Join
+ GroupUrl               %URL%                           Custom GroupURL or CS URL
+ ProfilePic             http://tinyurl.com/oewvyo7      Custom GroupURL or CS URL
+
  [>] set FromOrg James Brown, LLC
  [>] gen
 ```
