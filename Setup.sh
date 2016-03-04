@@ -13,7 +13,7 @@ func_title(){
 
   # Echo Title
   echo '=========================================================================='
-  echo ' SimpleEmail Setup Script | [Updated]: '
+  echo ' SimpleTemplate Setup Script | [Updated]: '
   echo '=========================================================================='
   echo ' [Web]: Http://CyberSyndicates.com | [Twitter]: @KillSwitch-GUI'
   echo '=========================================================================='
@@ -39,11 +39,15 @@ func_install_requests(){
   #sudo apt-get -q update
   #sudo apt-get -q upgrade 
   sudo git pull
-  sudo apt-get -y install wget grep antiword odt2txt
-  sudo pip install docx2txt --upgrade
+  # sudo apt-get -y install icedove 
+  sudo apt-get install iceweasel
+  sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi
+  sudo whiptail --msgbox "Please Hit (Install Now) & Please Close Iceweasel!" 10 40
+  sudo iceweasel unmht-8.1.0.xpi
   sudo pip install glob2 --upgrade
   sudo pip install configparser --upgrade
-  chmod 755 SimplyTemplate.py
+  sudo chmod +x SimplyTemplate.py
+  sudo rm unmht-8.1.0.xpi
 
 }
 

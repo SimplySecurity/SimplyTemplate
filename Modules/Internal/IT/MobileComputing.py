@@ -13,22 +13,23 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "SocialMediaPolicy.mht"
-    self.CoreOptions = "[Text, Html, Attachment]"
+    self.OutputName = "MobileComputing.mht"
+    self.CoreOptions = "[Html, Link]"
     # Required for each class:
-    self.Name = "Social Media Policy Signature Request"
+    self.Name = "Mangment move torwards providing portable computing solutions."
     self.Author = "Killswitch-GUI"
-    self.Type = "Text"
-    self.Info = """A very simple email template using a Attahment to deliver
-                   Payload and asking them to sign the OLE PDF."""
+    self.Type = "Html"
+    self.Info = """A template focusing on letting users to belive they will be issued 
+                    a ipad template for mobile computing."""
     self.Sophistication = "Medium" 
-    self.SampleImage = str('''Modules/Sample/SocialMediaPolicy.png''')
-    self.TemplatePath = str('''Modules/EmailTemplates/SocialMediaPolicy.email''')
+    self.SampleImage = str('''Modules/Sample/MobileComputing.png''')
+    self.TemplatePath = str('''Modules/EmailTemplates/MobileComputing.email''')
     # Required options for itself:
     self.RequiredOptions = {
-                              "HrDirector" : ["Ray Mongo", "The full name of the Director of HR"],
                               "FromEmail" : ["noreply@agency.com", "From Email"],
+                              "FromName" : ["Alex Jason", "From Full Name"],
                               "TargetCompany" : ["Cyber Power", "Set the Target Company Full Name" ],
+                              "TargetLink" : ["%URL%", "The full path link"],
                             }
   def Generate(self, filename, location, Verbose=False):
     # Gen will get 
@@ -37,8 +38,9 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
-      'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
+      'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_NAME'    : self.RequiredOptions["FromName"][0],
+      'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
       }
     WritePath =  str(filename) + str(location)
@@ -62,8 +64,9 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
-      'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
+      'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_NAME'    : self.RequiredOptions["FromName"][0],
+      'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
       }
 

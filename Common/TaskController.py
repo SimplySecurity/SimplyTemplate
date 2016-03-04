@@ -384,17 +384,34 @@ class Conducter:
         try:
             EmailRender = Task.Render()
             # print EmailRender
-            with open("temp.html", "wr") as myfile:
+            with open("temp.mht", "wr") as myfile:
                 myfile.write(EmailRender)
             try:
                 time.sleep(1)
-                subprocess.check_call(["gnome-open", "temp.html"])
+                subprocess.check_call(["iceweasel", "temp.mht"])
                 #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file
-            time.sleep(3)
-            os.remove("temp.html")
+            time.sleep(2)
+            os.remove("temp.mht")
+        except Exception as e:
+            print e
+
+    def TemplateFinalRender(self, FilePath, FileName):
+        '''
+        This function will open the 
+        Produced .MHT file
+        '''
+        try:
+            # print EmailRender
+            Path = str(FilePath) + str(FileName)
+            try:
+                time.sleep(1)
+                subprocess.check_call(["iceweasel", Path])
+                #time.sleep(5)
+            except Exception as e:
+                print Helpers.color(" [!] Is a Iceweasel browser installed? (Run Setup)")
         except Exception as e:
             print e
 
@@ -442,6 +459,15 @@ class Conducter:
            Email File:\t\t\t{3}
         """.format(Helpers.color(p, green=True),Task.Name,FileLocation,FileName)
         print line 
+        # Now check if they want to open the file
+        p = Helpers.color(" [>] ", status=True) + "Would you like to view the generated template? (y) or (n): "
+        while True:
+            a = raw_input(p)
+            if a.lower() == "y":
+                self.TemplateFinalRender(FileLocation, FileName)
+                break
+            if a.lower() == "n":
+                break
         p = Helpers.color(" [>] ", status=True) + "Would you like to return to Current Module? (y) or (n): "
         while True:
             a = raw_input(p)

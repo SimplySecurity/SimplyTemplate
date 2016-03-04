@@ -13,22 +13,22 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "SocialMediaPolicy.mht"
-    self.CoreOptions = "[Text, Html, Attachment]"
+    self.OutputName = "GoogleSlidesInvite.mht"
+    self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
-    self.Name = "Social Media Policy Signature Request"
+    self.Name = "Google Slides Invite to Edit."
     self.Author = "Killswitch-GUI"
-    self.Type = "Text"
-    self.Info = """A very simple email template using a Attahment to deliver
-                   Payload and asking them to sign the OLE PDF."""
+    self.Type = "Html"
+    self.Info = """A Google Slides invite to edit a presentation from a fellow Co-Worker."""
     self.Sophistication = "Medium" 
-    self.SampleImage = str('''Modules/Sample/SocialMediaPolicy.png''')
-    self.TemplatePath = str('''Modules/EmailTemplates/SocialMediaPolicy.email''')
+    self.SampleImage = str('''Modules/Sample/GoogleSlidesInvite.png''')
+    self.TemplatePath = str('''Modules/EmailTemplates/GoogleSlidesInvite.email''')
     # Required options for itself:
     self.RequiredOptions = {
-                              "HrDirector" : ["Ray Mongo", "The full name of the Director of HR"],
                               "FromEmail" : ["noreply@agency.com", "From Email"],
-                              "TargetCompany" : ["Cyber Power", "Set the Target Company Full Name" ],
+                              "FromName" : ["Alex Jason", "From Full Name"],
+                              "TargetLink" : ["%URL%", "The full path link"],
+                              "SlidesName" : ["HackTheWorld", "The name of the Google Slides shared"],
                             }
   def Generate(self, filename, location, Verbose=False):
     # Gen will get 
@@ -37,9 +37,10 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
-      'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
-      'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
+      'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_NAME'    : self.RequiredOptions["FromName"][0],
+      'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
+      'SHARE_DOCUMENT' : self.RequiredOptions["SlidesName"][0],
       }
     WritePath =  str(filename) + str(location)
 
@@ -62,9 +63,10 @@ class TemplateModule:
     # Verbose = Print all help data
     # adapted from Andy
     replaceDict = {
-      'TARGET_HR_DIR' : self.RequiredOptions["HrDirector"][0],
-      'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
-      'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
+      'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_NAME'    : self.RequiredOptions["FromName"][0],
+      'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
+      'SHARE_DOCUMENT' : self.RequiredOptions["SlidesName"][0],
       }
 
     with open(self.TemplatePath, 'r') as templateEmail:

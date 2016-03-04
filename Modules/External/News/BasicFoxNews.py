@@ -13,7 +13,7 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "FoxNews.Html"
+    self.OutputName = "FoxNews.mht"
     self.CoreOptions = "[Text, Link]"
     # Required for each class:
     self.Name = "Fox News Basic Link"

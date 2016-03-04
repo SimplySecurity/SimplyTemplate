@@ -13,7 +13,7 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "WellnessProgram.Html"
+    self.OutputName = "WellnessProgram.mht"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "HR Email attempting to get users to to follow a link for Wellness Programs."

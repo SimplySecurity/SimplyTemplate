@@ -1,0 +1,22 @@
+MIME-Version: 1.0
+Date: 
+Subject: Check out this tweet!
+From: FROM_NAME <FROM_EMAIL>
+To: 
+Content-Type: multipart/alternative;  boundary=089e0116172e3f92ae83753da82c
+
+--089e0116172e3f92ae83753da82c
+
+Content-Type: text/plain; charset=UTF-80h
+
+my, look at what somebody posted on Twitter TARGET_LINK Someone is getting FIRED for this!!
+
+--089e0116172e3f92ae83753da82c
+
+Content-Type: text/html; charset=UTF-8
+
+<p>Oh my, look at what somebody posted on Twitter <a href="TARGET_LINK">link</a></p>
+
+<p>Someone is getting FIRED for this!!</p>
+
+--089e0116172e3f92ae83753da82c
