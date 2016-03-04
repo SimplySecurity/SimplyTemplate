@@ -39,11 +39,12 @@ func_install_requests(){
   #sudo apt-get -q update
   #sudo apt-get -q upgrade 
   sudo git pull
+  sudo easy_install pip
   # sudo apt-get -y install icedove 
   sudo apt-get install iceweasel
   sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi
   sudo whiptail --msgbox "Please Hit (Install Now) & Please Close Iceweasel!" 10 40
-  sudo iceweasel unmht-8.1.0.xpi
+  iceweasel unmht-8.1.0.xpi
   sudo pip install glob2 --upgrade
   sudo pip install configparser --upgrade
   sudo chmod +x SimplyTemplate.py
