@@ -37,7 +37,7 @@ Core Options:
 - Attachment == Can support text that tells users to open or use the supplied attachment.
 
 Email Rendering:
-- Html == This was used by some to view the HTML markup but CSS dose not render correctly
+- Html == This was used by some to view the HTML markup but CSS does not render correctly (Basic Templates)
 - eml == Files can be outputed via .EML to open them directly in Icedove or Outlook
 - mht == MHTML is the Mail Html Markup used and can directly rendered in Word/IE or Iceweasel via plugin
 
