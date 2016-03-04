@@ -21,9 +21,7 @@ class TemplateModule:
     self.Author = "Killswitch-GUI"
     self.Type = "HTML/Text"
     self.Sophistication = "High" 
-    self.Info = """Using a custom news letter is common by HR and other depts.
-                   By setting up a proper and common HTML email you can easily 
-                   get clicks and less likely to be reported."""
+    self.Info = """Using a custom news letter is common by HR and other depts. By setting up a proper and common HTML email you can easily get clicks and less likely to be reported."""
     self.SampleImage = str('''Modules/Sample/CyberNewsLetter.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/CyberNewsLetter.email''')
     # Required options for itself:

@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Social Media Policy Signature Request"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """A very simple email template using a Attahment to deliver
-                   Payload and asking them to sign the OLE PDF."""
+    self.Info = """A very simple email template using a Attahment to deliver Payload and asking them to sign the OLE PDF."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/SocialMediaPolicy.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/SocialMediaPolicy.email''')

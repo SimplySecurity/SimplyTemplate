@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "IT Dev team alert on website updates."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A quick template that entices users by a email from the IT Development team requesting 
-                    that a group of internal users help test the website before it is placed in production."""
+    self.Info = """A quick template that entices users by a email from the IT Development team requesting that a group of internal users help test the website before it is placed in production."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/WebsiteDevelopmentTest.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/WebsiteDevelopmentTest.email''')

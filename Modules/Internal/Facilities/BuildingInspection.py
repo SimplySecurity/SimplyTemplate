@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Facility testing for mold contamination."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A template that informs users about testing the facility for mold contamination,
-                    while asking the userbase for potential illiness."""
+    self.Info = """A template that informs users about testing the facility for mold contamination, while asking the userbase for potential illiness."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/BuildingInspection.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/BuildingInspection.email''')

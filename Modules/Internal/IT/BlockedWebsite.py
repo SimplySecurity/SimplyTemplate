@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "=IT SOC Alert that you have visted a BlockedWebsite"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """This targeted email informs the user that the requested site was blocked 
-                  by the SOC. Than asking the user to answer a few simple questions"""
+    self.Info = """This targeted email informs the user that the requested site was blocked by the SOC. Than asking the user to answer a few simple questions"""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/BlockedWebsite.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/BlockedWebsite.email''')

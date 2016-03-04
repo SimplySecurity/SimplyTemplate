@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Mangment email on sequestration of the Gov."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A template focusing on long term financial issues and how to avoid sequestration.
-                  This template will be a good fit for must State/Gov orgs."""
+    self.Info = """A template focusing on long term financial issues and how to avoid sequestration. This template will be a good fit for must State/Gov orgs."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/GovBudgetReduction.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/GovBudgetReduction.email''')

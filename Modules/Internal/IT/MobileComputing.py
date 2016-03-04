@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Mangment move torwards providing portable computing solutions."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A template focusing on letting users to belive they will be issued 
-                    a ipad template for mobile computing."""
+    self.Info = """A template focusing on letting users to belive they will be issued a ipad template for mobile computing."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/MobileComputing.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/MobileComputing.email''')

@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "HR Email attempting to get users to to follow a link for Wellness Programs."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A quick template that entices users by a 10% discount for all employees who 
-                  choose to participate in any of the activities listed."""
+    self.Info = """A quick template that entices users by a 10% discount for all employees who choose to participate in any of the activities listed."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/WellnessProgram.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/WellnessProgram.email''')

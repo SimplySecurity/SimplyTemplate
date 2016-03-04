@@ -20,9 +20,7 @@ class TemplateModule:
     self.Name = "IT Dev team alert on website updates."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A quick template that informs user that they will be monitored for past
-                    browsing history within their Company. This will try to get them to answer a
-                    few questions"""
+    self.Info = """A quick template that informs user that they will be monitored for past browsing history within their Company. This will try to get them to answer a few questions"""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/NoticeofMonitoring.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/NoticeOfMonitoring.email''')

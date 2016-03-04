@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Pay Scale and Bonus Guideline Basic Link"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """A very simple email template using a standard link from a user
-                   Asking them to check out the new Bonus and Pay standards from HR."""
+    self.Info = """A very simple email template using a standard link from a user Asking them to check out the new Bonus and Pay standards from HR."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/BonusPayScale.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/PayScaleBonusGuideline.email''')

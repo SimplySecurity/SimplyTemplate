@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Fox News Basic Link"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """A very simple email template using a standard link from a user
-                   Asking them to open a news article."""
+    self.Info = """A very simple email template using a standard link from a user Asking them to open a news article."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/FoxNews.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/FoxNewsBasicTemplate.email''')

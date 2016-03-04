@@ -20,9 +20,7 @@ class TemplateModule:
     self.Name = "Office 365 Migration email from IT"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """This Targeted email works great with the correct Domain Name, 
-                  and primary research to ensure that the target is using Office365 MX
-                  Records of SPF TXT Records."""
+    self.Info = """This Targeted email works great with the correct Domain Name, and primary research to ensure that the target is using Office365 MX Records of SPF TXT Records."""
     self.Sophistication = "High" 
     self.SampleImage = str('''Modules/Sample/Office365Migration.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/Office365Migration.email''')

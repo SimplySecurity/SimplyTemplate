@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Simple IRS phish to inform user their W2 is wrong and the IRS has been reported a Corrected version"
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A moderate template that is used to entice users 
-                  to either download a file or click a link."""
+    self.Info = """A moderate template that is used to entice users to either download a file or click a link."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/IRS-CorrectedW2.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/IRS-CorrectedW2.email''')

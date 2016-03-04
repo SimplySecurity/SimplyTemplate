@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "Salary guidelines for the fiscal year."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A small template with salary updates from OPM, this will work great at the end of the
-                    fiscal year within GOV agencies."""
+    self.Info = """A small template with salary updates from OPM, this will work great at the end of the fiscal year within GOV agencies."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/OPMSalaryGuidelines.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/OPMSalaryGuidelines.email''')

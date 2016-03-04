@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "IT security alert regarding Phishing taking place."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A quick template that talks about the security team has detected several 
-                  active phishing campaigns that are targeting internal staff."""
+    self.Info = """A quick template that talks about the security team has detected several active phishing campaigns that are targeting internal staff."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/PhishingAlert.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/PhishingAlert.email''')

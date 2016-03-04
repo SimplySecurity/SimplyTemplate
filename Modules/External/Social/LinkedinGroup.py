@@ -20,9 +20,7 @@ class TemplateModule:
     self.Name = "Linkedin Group Invite"
     self.Author = "Killswitch-GUI"
     self.Type = "HTML/Text"
-    self.Info = """Linkedin uses a very common setup for group and user invites. This template 
-                   takes advantage of this and uses the Rich HTML from a real email. Places your data 
-                   into the template and generates a Html/Text Template for you."""
+    self.Info = """Linkedin uses a very common setup for group and user invites. This template takes advantage of this and uses the Rich HTML from a real email. Places your data into the template and generates a Html/Text Template for you."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/LinkedinGroup.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/LinkedinGroupTemplate.email''')

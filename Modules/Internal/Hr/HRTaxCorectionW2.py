@@ -20,8 +20,7 @@ class TemplateModule:
     self.Name = "HR request for target to use link or download file to view"
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A moderate template that is used to entice users 
-                  to either download a file or click a link."""
+    self.Info = """A moderate template that is used to entice users to either download a file or click a link."""
     self.Sophistication = "Medium" 
     self.SampleImage = str('''Modules/Sample/HRTaxCorrectionW2.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/HRTaxCorrectionW2.email''')

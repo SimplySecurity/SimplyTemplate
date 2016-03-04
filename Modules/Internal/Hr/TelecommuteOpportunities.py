@@ -20,9 +20,7 @@ class TemplateModule:
     self.Name = "Increased on opportunities for employees to telecommute."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
-    self.Info = """A very targeted email to corps that would support Telecommute options
-                    in the first place. Telling users the increased opportunities for employees 
-                    to telecommute can be effective to entice users act fast."""
+    self.Info = """A very targeted email to corps that would support Telecommute options in the first place. Telling users the increased opportunities for employees to telecommute can be effective to entice users act fast."""
     self.Sophistication = "High" 
     self.SampleImage = str('''Modules/Sample/TelecommuteOpportunities.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/TelecommuteOpportunities.email''')

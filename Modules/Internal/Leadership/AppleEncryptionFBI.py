@@ -20,9 +20,7 @@ class TemplateModule:
     self.Name = "Apple FBI Encryption stance from leadership"
     self.Author = "Killswitch-GUI"
     self.Type = "Text"
-    self.Info = """This broad email explains Apples current issues faced with Encryption,
-                    while providing leadership insight into the issue. This will work well
-                    with Gov agency's as well as IT corps."""
+    self.Info = """This broad email explains Apples current issues faced with Encryption, while providing leadership insight into the issue. This will work well with Gov agency's as well as IT corps."""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/AppleEncryptionFBI.png''')
     self.TemplatePath = str('''Modules/EmailTemplates/AppleEncryptionFBI.email''')
