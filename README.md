@@ -36,6 +36,11 @@ Core Options:
 - Link == Template supports a major link for stats or potential web download of document/Drive-by.
 - Attachment == Can support text that tells users to open or use the supplied attachment.
 
+Email Rendering:
+- Html == This was used by some to view the HTML markup but CSS dose not render correctly
+- eml == Files can be outputed via .EML to open them directly in Icedove or Outlook
+- mht == MHTML is the Mail Html Markup used and can directly rendered in Word/IE or Iceweasel via plugin
+
 ## Get Started
 Please RUN the simple Setup Bash script!!!
 ```Bash
