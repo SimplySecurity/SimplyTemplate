@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "GoogleSlidesInvite.mht"
+    self.OutputName = "GoogleSlidesInvite.eml"
+    self.RenderName = "GoogleSlidesInvite.eml"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Google Slides Invite to Edit."

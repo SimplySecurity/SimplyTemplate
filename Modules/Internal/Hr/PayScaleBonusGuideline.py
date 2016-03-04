@@ -14,6 +14,7 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "PayScaleBonusGuideline.mht"
+    self.RenderName = "PayScaleBonusGuideline.mht"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Pay Scale and Bonus Guideline Basic Link"

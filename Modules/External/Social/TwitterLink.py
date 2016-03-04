@@ -13,8 +13,10 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "TwitterLink.mht"
+    self.OutputName = "TwitterLink.html"
+    self.RenderName = "TwitterLink.html"
     self.CoreOptions = "[Html, Link]"
+    self.RenderOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "Quick Link to Twitter post!"
     self.Author = "Killswitch-GUI"

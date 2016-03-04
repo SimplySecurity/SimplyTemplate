@@ -14,6 +14,7 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "Office365Migration.mht"
+    self.RenderName = "Office365Migration.mht"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Office 365 Migration email from IT"
@@ -31,6 +32,7 @@ class TemplateModule:
                               "TargetLocation" : ["Las Vegas", "Set the Target Company State" ],
                               "TargetPhone" : ["1-800-CD-FOUR", "Set the Target Toll Free line" ],
                               "TargetLogo" : ["http://Target.com/logo.png", "Set the Target Logo" ],
+                              "TargetLink" : ["%URL%", "The full path link"],
                               "FromEmail" : ["noreply@agency.com", "From Email"],
                             }
   def Generate(self, filename, location, Verbose=False):
@@ -43,6 +45,7 @@ class TemplateModule:
       'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
       'TARGET_LOGO' : self.RequiredOptions["TargetLogo"][0],
+      'TARGET_LINK' : self.RequiredOptions["TargetLink"][0],
       'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
       'TARGET_LOCATION' : self.RequiredOptions["TargetLocation"][0],
       }
@@ -70,6 +73,7 @@ class TemplateModule:
       'FROM_EMAIL'    : self.RequiredOptions["FromEmail"][0],
       'TARGET_COMP_NAME' : self.RequiredOptions["TargetCompany"][0],
       'TARGET_LOGO' : self.RequiredOptions["TargetLogo"][0],
+      'TARGET_LINK' : self.RequiredOptions["TargetLink"][0],
       'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
       'TARGET_LOCATION' : self.RequiredOptions["TargetLocation"][0],
       }

@@ -8,4 +8,4 @@ Content-Type: text/plain; charset=ISO-8859-1
 <p>Hey,</p>
 <p>Check out this article from FoxNews...</p>
 <p><a href="LINK_URL">Article</a></p>
-<p>Thanks,<br>[FROM_FIRST_NAME]</p>
+<p>Thanks,<br>FROM_FIRST_NAME</p>

@@ -14,9 +14,10 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "TelecommuteOpportunities.mht"
+    self.RenderName = "TelecommuteOpportunities.mht"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
-    self.Name = "HR inof increased on opportunities for employees to telecommute."
+    self.Name = "Increased on opportunities for employees to telecommute."
     self.Author = "Killswitch-GUI"
     self.Type = "Html"
     self.Info = """A very targeted email to corps that would support Telecommute options

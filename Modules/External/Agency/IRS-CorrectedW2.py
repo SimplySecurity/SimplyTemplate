@@ -14,6 +14,7 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "IRS-CorrectedW2.mht"
+    self.RenderName = "IRS-CorrectedW2.mht"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Simple IRS phish to inform user their W2 is wrong and the IRS has been reported a Corrected version"

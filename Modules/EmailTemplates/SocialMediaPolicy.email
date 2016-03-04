@@ -1,11 +1,13 @@
-From: FROM_FULL_NAME <FROM_EMAIL>
 Subject: Social Media Policy
-To: 
+From: FROM_FULL_NAME <FROM_EMAIL>
+Mime-version: 1.0
+Content-type: multipart/alternative;
+  boundary="B_3539950961_1068255931"
 
-Content-type: multipart/mixed;
-  boundary="B_3535702037_861876822"
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
 
---B_3535702037_1916937320
+--B_3539950961_1068255931
 Content-type: text/plain;
   charset="UTF-8"
 Content-transfer-encoding: 7bit
@@ -19,32 +21,23 @@ Regards,
 TARGET_HR_DIR 
 Director of Human Resources 
 
---B_3535702037_1916937320
+
+--B_3539950961_1068255931
 Content-type: text/html;
   charset="UTF-8"
 Content-transfer-encoding: quoted-printable
 
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
-</head>
-<body>
-All, <br>
-<br>
-As social media becomes increasingly visible to the public, TARGET_COMP_NAME=
-employees must be mindful of how their actions online may reflect on the com=
-pany. When representing TARGET_COMP_NAME, employees should remain professional=
-, courteous, and friendly to uphold
- our core values. <br>
-Please sign the attached memorandum for the new Social Media Policy for=
-TARGET_COMP_NAME employees.
-<br>
-<br>
-Regards, <br>
-TARGET_HR_DIR <br>
-Director of Human Resources
-</body>
-</html>
+<html><head></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: s=
+pace; -webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-size:=
+ 14px; font-family: Calibri, sans-serif;"><div><div><div><div>Team,&nbsp;</d=
+iv><div><br></div><div>As social media becomes increasingly visible to the p=
+ublic, TARGET_COMP_NAME employees must be mindful of how their actions onlin=
+e may reflect on the company. When representing TARGET_COMP_NAME, employees =
+should remain professional, courteous, and friendly to uphold &nbsp;our core=
+ values.&nbsp;</div><div>Please sign the attached memorandum for the new Soc=
+ial Media Policy for TARGET_COMP_NAME employees.&nbsp;</div><div><br></div><=
+div>Regards,&nbsp;</div><div>TARGET_HR_DIR&nbsp;</div><div>Director of Human=
+ Resources&nbsp;</div></div></div></div></body></html>
 
+--B_3539950961_1068255931--
 
---B_3535702037_1916937320--

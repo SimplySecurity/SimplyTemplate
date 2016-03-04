@@ -14,6 +14,7 @@ class TemplateModule:
   def __init__(self):
     # Meta Tags for file name and such:
     self.OutputName = "CyberNews.mht"
+    self.OutputName = "RenderNews.mht"
     self.CoreOptions = "[Text, Html, Link]"
     # Required for each class:
     self.Name = "Cyber News Letter"

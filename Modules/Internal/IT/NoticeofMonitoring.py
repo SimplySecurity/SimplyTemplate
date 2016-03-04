@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "NoticeofMonitoring.mht"
+    self.OutputName = "NoticeofMonitoring.html"
+    self.RenderName = "NoticeofMonitoring.html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "IT Dev team alert on website updates."
@@ -24,7 +25,7 @@ class TemplateModule:
                     few questions"""
     self.Sophistication = "Low" 
     self.SampleImage = str('''Modules/Sample/NoticeofMonitoring.png''')
-    self.TemplatePath = str('''Modules/EmailTemplates/NoticeofMonitoring.email''')
+    self.TemplatePath = str('''Modules/EmailTemplates/NoticeOfMonitoring.email''')
     # Required options for itself:
     self.RequiredOptions = {
                               "FromEmail" : ["noreply@agency.com", "From Email"],

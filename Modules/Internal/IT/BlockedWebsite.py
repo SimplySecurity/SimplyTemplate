@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "BlockedWebsite.mht"
+    self.OutputName = "BlockedWebsite.html"
+    self.RenderName = "BlockedWebsite.html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "=IT SOC Alert that you have visted a BlockedWebsite"

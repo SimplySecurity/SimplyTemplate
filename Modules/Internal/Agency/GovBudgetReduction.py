@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "GovBudgetReduction.mht"
+    self.OutputName = "GovBudgetReduction.html"
+    self.RenderName = "GovBudgetReduction.html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "Mangment email on sequestration of the Gov."

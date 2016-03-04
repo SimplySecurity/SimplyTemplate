@@ -9,6 +9,7 @@ import time
 import subprocess
 import re
 import collections
+from os.path import expanduser
 from Helpers import Helpers 
 
 
@@ -353,7 +354,8 @@ class Conducter:
                 if a:
                     return a
                 else:
-                    a = "/root/Desktop/"
+                    home = expanduser("~")
+                    a = str(home) + "/Desktop/"
                     return a
             except Exception as e:
                 print e
@@ -384,21 +386,25 @@ class Conducter:
         try:
             EmailRender = Task.Render()
             # print EmailRender
-            with open("temp.mht", "wr") as myfile:
+            RenderName = Task.RenderName
+            with open(RenderName, "wr") as myfile:
                 myfile.write(EmailRender)
             try:
-                time.sleep(1)
-                subprocess.check_call(["iceweasel", "temp.mht"])
+                # time.sleep(0)
+                if ".eml" in RenderName:
+                    subprocess.check_call(["icedove", RenderName])
+                else:
+                    subprocess.check_call(["iceweasel", RenderName])
                 #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file
-            time.sleep(2)
-            os.remove("temp.mht")
+            # time.sleep(2)
+            os.remove(RenderName)
         except Exception as e:
             print e
 
-    def TemplateFinalRender(self, FilePath, FileName):
+    def TemplateFinalRender(self, FilePath, FileName, Task):
         '''
         This function will open the 
         Produced .MHT file
@@ -408,7 +414,10 @@ class Conducter:
             Path = str(FilePath) + str(FileName)
             try:
                 time.sleep(1)
-                subprocess.check_call(["iceweasel", Path])
+                if ".eml" in Path:
+                    subprocess.check_call(["icedove", "-File", Path])
+                else:
+                    subprocess.check_call(["iceweasel", Path])
                 #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a Iceweasel browser installed? (Run Setup)")
@@ -464,7 +473,7 @@ class Conducter:
         while True:
             a = raw_input(p)
             if a.lower() == "y":
-                self.TemplateFinalRender(FileLocation, FileName)
+                self.TemplateFinalRender(FileLocation, FileName, Task)
                 break
             if a.lower() == "n":
                 break

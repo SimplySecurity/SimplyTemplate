@@ -1,16 +1,22 @@
-MIME-Version: 1.0
 Subject: URGENT - Increased Telecommuting Opportunities
 From: FROM_NAME <FROM_EMAIL>
-To:
+Mime-version: 1.0
+Content-type: multipart/alternative;
+  boundary="B_3539951594_1557289887"
 
---001a1134f68cd60eba052c9cd8c9
-Content-Type: text/plain; charset=UTF-8
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3539951594_1557289887
+Content-type: text/plain;
+  charset="UTF-8"
+Content-transfer-encoding: 7bit
 
 All,
 
 Beginning in CUR_QUATER of this year there will be significantly increased
 opportunities for employees to telecommute. To prepare for this shift in
-operations, we are conducting a series of pilot tests to resolve issues
+operations, we are conducting a series of pilot rtests to resolve issues
 prior to full rollout.
 
 Your position qualifies you to participate in the first round of pilot
@@ -27,35 +33,43 @@ To sign up to be in the pilot test, please fill out the Telecommute
 Eligibility Form at the link below by the End-of-Business DUE_DATE.
 Please note that the pilot testing group is selected on a first-come,
 first-serve basis.
-TARGET_URL
+TARGET_LINK
 
 The testing group will be contacted on NOTIFICATION_DATE to notify of
 acceptance and provide next steps.
-
+NOTIFICATION_DATE
 Thank you,
 FROM_NAME
 
---001a1134f68cd60eba052c9cd8c9
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
 
-<div dir="ltr">All,<div><br></div><div>Beginning in CUR_QUATER of this y=
-ear there will be significantly increased opportunities for employees to te=
-lecommute. To prepare for this shift in operations, we are conducting a ser=
-ies of pilot tests to resolve issues prior to full rollout.=C2=A0</div><div=
-><br></div><div>Your position qualifies you to participate in the first rou=
-nd of pilot testing, which will allow up to 100% telecommute. To take part =
-in this test you will need to meet a few additional requirements, such as:<=
-/div><div><ul><li>Internet connection with at least 10 MBps down, 3 MBps up=
-<br></li><li>Working area suitable to allow distraction-free work and phone=
- calls<br></li><li>Ability to print as needed<br></li><li>Ability to secure=
-ly shred documents with cross-cut shredder<br></li></ul></div><div><br></di=
-v><div>To sign up to be in the pilot test, please fill out the Telecommute =
-Eligibility Form at the link below by the End-of-Business %DUE-DATE%. Pl=
-ease note that the pilot testing group is selected on a first-come, first-s=
-erve basis.</div><div><a href="TARGET_LINK">TARGET_LINK</a></div><div><br></div><div>The testing group will=
- be contacted on NOTIFICATION_DATE to notify of acceptance and provide next ste=
-ps.</div><div><br></div><div>Thank you,</div><div>FROM_NAME</div><div><br=
-></div><div><br></div></div>
 
---001a1134f68cd60eba052c9cd8c9--
+--B_3539951594_1557289887
+Content-type: text/html;
+  charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html><head></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: s=
+pace; -webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-size:=
+ 14px; font-family: Calibri, sans-serif;"><div><div><div><div>All,</div><div=
+><br></div><div>Beginning in CUR_QUATER of this year there will be significa=
+ntly increased</div><div>opportunities for employees to telecommute. To prep=
+are for this shift in</div><div>operations, we are conducting a series of pi=
+lot tests to resolve issues</div><div>prior to full rollout.</div><div><br><=
+/div><div>Your position qualifies you to participate in the first round of p=
+ilot</div><div>testing, which will allow up to 100% telecommute. To take par=
+t in this test</div><div>you will need to meet a few additional requirements=
+, such as:</div><div><br></div><div>&nbsp; &nbsp;- Internet connection with =
+at least 10 MBps down, 3 MBps up</div><div>&nbsp; &nbsp;- Working area suita=
+ble to allow distraction-free work and phone calls</div><div>&nbsp; &nbsp;- =
+Ability to print as needed</div><div>&nbsp; &nbsp;- Ability to securely shre=
+d documents with cross-cut shredder</div><div><br></div><div><br></div><div>=
+To sign up to be in the pilot test, please fill out the Telecommute</div><di=
+v>Eligibility Form at the link below by the End-of-Business DUE_DATE.</div><=
+div>Please note that the pilot testing group is selected on a first-come,</d=
+iv><div>first-serve basis.</div><div><a href=3D"TARGET_LINK">TARGET_LINK</a></di=
+v><div><br></div><div>The testing group will be contacted on NOTIFICATION_DATE to notify of</div><div>acceptance and provide next steps.</div><div><br><=
+/div><div>Thank you,</div><div>FROM_NAME</div></div></div></div><div><br></d=
+iv></body></html>
+
+--B_3539951594_1557289887--
+

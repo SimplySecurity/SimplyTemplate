@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "PhishingAlert.mht"
+    self.OutputName = "PhishingAlert.html"
+    self.RenderName = "PhishingAlert.html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "IT security alert regarding Phishing taking place."

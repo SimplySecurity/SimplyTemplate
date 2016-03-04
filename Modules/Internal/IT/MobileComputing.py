@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "MobileComputing.mht"
+    self.OutputName = "MobileComputing.html"
+    self.RenderName = "MobileComputing.html"
     self.CoreOptions = "[Html, Link]"
     # Required for each class:
     self.Name = "Mangment move torwards providing portable computing solutions."

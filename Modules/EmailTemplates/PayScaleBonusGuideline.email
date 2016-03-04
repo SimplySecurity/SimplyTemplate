@@ -1,14 +1,19 @@
-From: FROM_FULL_NAME <FROM_EMAIL>
+Date: 
 Subject: CUR_YEAR Payscale Guidelines
-To: 
-
+From: FROM_FULL_NAME <FROM_EMAIL>
+Mime-version: 1.0
 Content-type: multipart/alternative;
-  boundary="B_3535697399_1371369990"
+  boundary="B_3539950401_2088939626"
 
---B_3535697399_1371369990
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3539950401_2088939626
 Content-type: text/plain;
   charset="UTF-8"
 Content-transfer-encoding: 7bit
+
+ALCON,
 
 The TARGET_COMP_NAME Office of Human Resources has formalized the CUR_QUATER - CUR_YEAR enhanced bonus structure and compensation policy for the beginning of the year. 
 
@@ -18,29 +23,23 @@ Regards,
 TARGET_HR_DIR 
 Director of Human Resources 
 
---B_3535697399_1371369990
+
+--B_3539950401_2088939626
 Content-type: text/html;
   charset="UTF-8"
 Content-transfer-encoding: quoted-printable
 
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
-</head>
-<body>
-The TARGET_COMP_NAME Office of Human Resources has formalized the CUR_QUATER - CUR_YEAR enh=
-anced bonus structure and compensation policy for the beginning of the year.
-<br>
-<br>
-The updated guidelines are available at TARGET_LINK.
-<br>
-<br>
-Regards, <br>
-TARGET_HR_DIR <br>
-Director of Human Resources
-</body>
-</html>
+<html><head></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: s=
+pace; -webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-famil=
+y: Calibri, sans-serif;"><div>ALCON,</div><div><br></div><div>The TARGET_COM=
+P_NAME Office of Human Resources has formalized the CUR_QUATER - CUR_YEAR en=
+hanced bonus structure and compensation policy for the beginning of the year=
+.&nbsp;</div><div><br></div><div>The updated guidelines are available at <a =
+href=3D"TARGET_LINK">TARGET_LINK</a>.&nbsp;</div><div><br></div><div>Regards,&=
+nbsp;</div><div>TARGET_HR_DIR&nbsp;</div><div>Director of Human Resources&nb=
+sp;</div></body></html>
+
+--B_3539950401_2088939626--
 
 
---B_3535697399_1371369990--
 

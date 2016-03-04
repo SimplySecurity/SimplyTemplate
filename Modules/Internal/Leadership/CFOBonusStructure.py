@@ -13,7 +13,8 @@ class TemplateModule:
 
   def __init__(self):
     # Meta Tags for file name and such:
-    self.OutputName = "CFOBonusStructure.mht"
+    self.OutputName = "CFOBonusStructure.html"
+    self.RenderName = "CFOBonusStructure.html"
     self.CoreOptions = "[Html, Attachment]"
     # Required for each class:
     self.Name = "CFO Policy update to bonus."
