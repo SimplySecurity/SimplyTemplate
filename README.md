@@ -18,7 +18,7 @@ Work Conducted by:
 
 A few small benefits:
 - Easy for you to write modules (All you need is 1 required Class option and you're up and running)
-- Simple intergration of Email Templates
+- Simple integration of Email Templates
 - Also the ability to change major settings fast without diving into the code (Coming)
 
 ## Understanding Module Types
