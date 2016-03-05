@@ -8,13 +8,13 @@ of delivering emails is the Spear Phish in Cobalt strike so you will see proper 
 Current Platforms Supported:
 * Kali Linux 2.0
 * Kali Linux 1.0
+* Debian (deb8u3)
 
 Work Conducted by:
 ----------------------------------------------
 * Alexander Rymdeko-Harvey [Twitter] @Killswitch-GUI -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
 * Keelyn Roberts [Twitter] @real_slacker007 -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
 * Steve Borosh [@rvrsh3ll] -- [web] [www.rvrsh3ll.net](http://www.rvrsh3ll.net/blog/)
-* 
 
 A few small benefits:
 - Easy for you to write modules (All you need is 1 required Class option and you're up and running)
