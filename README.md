@@ -13,8 +13,13 @@ Current Platforms Supported:
 Work Conducted by:
 ----------------------------------------------
 * Alexander Rymdeko-Harvey [Twitter] @Killswitch-GUI -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
-* Keelyn Roberts [Twitter] @real_slacker007 -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
+
+Major Call Outs!:
+----------------------------------------------
+* Chris Ross [@xorrior]
 * Steve Borosh [@rvrsh3ll] -- [web] [www.rvrsh3ll.net](http://www.rvrsh3ll.net/blog/)
+* ATD Team [@VerisGroup] -- [web] [https://www.verisgroup.com/adaptive-threat-division/](https://www.verisgroup.com/adaptive-threat-division/)
+
 
 A few small benefits:
 - Easy for you to write modules (All you need is 1 required Class option and you're up and running)
