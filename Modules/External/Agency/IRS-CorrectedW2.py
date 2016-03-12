@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import os
-
+from Helpers import TemplateEdit
 # Class funcs will have:
 # -Name
 # -Author
@@ -27,9 +27,16 @@ class TemplateModule:
     # Required options for itself:
     self.RequiredOptions = {
                               "FromEmail" : ["noreply@agency.com", "From Email"],
+                              "FromAgency" : ["Internal Revenue Service", "From Agency"],
                               "TaxYear" : ["2015", "Previous year / Tax Seasson"],
                               "TargetLink" : ["%URL%", "The full path link"],
+
                             }
+    self.RequiredText = {
+                              "TextBlock1" : ["Dear User,", "Open Statment"],
+                              "TextBlock2" : ["Sir / Madam, the IRS just received an electronic notice from your employer of a W-2c (W-2 Corrected). This email is in correspondence to inform you that (change / update) may be needed for your TAX_YEAR tax return. Please follow the link to be informed of your rights and instructions to refile your return.", "Main Paragraph"],
+                              "TextBlock3" : ["Sorry for any inconvenience this has caused.", "Secondary Paragraph"],
+                            }                          
   def Generate(self, filename, location, Verbose=False):
     # Gen will get 
     # Filename = the name of the output
@@ -38,13 +45,22 @@ class TemplateModule:
     # adapted from Andy
     replaceDict = {
       'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_AGENCY' : self.RequiredOptions["FromAgency"][0],
       'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
       'TAX_YEAR'    : self.RequiredOptions["TaxYear"][0],
+      }
+    replaceTextDict = {
+      'TEXT_BLOCK_1' : self.RequiredText["TextBlock1"][0],
+      'TEXT_BLOCK_2' : self.RequiredText["TextBlock2"][0],
+      'TEXT_BLOCK_3' : self.RequiredText["TextBlock3"][0],
       }
     WritePath =  str(filename) + str(location)
 
     with open(self.TemplatePath, 'r') as templateEmail:
       outputEmail = templateEmail.read()
+
+    for dummy, value in replaceTextDict.iteritems():
+        outputEmail = outputEmail.replace(dummy, value)
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)
@@ -63,12 +79,20 @@ class TemplateModule:
     # adapted from Andy
     replaceDict = {
       'FROM_EMAIL' : self.RequiredOptions["FromEmail"][0],
+      'FROM_AGENCY' : self.RequiredOptions["FromAgency"][0],
       'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
       'TAX_YEAR'    : self.RequiredOptions["TaxYear"][0],
       }
-
+    replaceTextDict = {
+      'TEXT_BLOCK_1' : self.RequiredText["TextBlock1"][0],
+      'TEXT_BLOCK_2' : self.RequiredText["TextBlock2"][0],
+      'TEXT_BLOCK_3' : self.RequiredText["TextBlock3"][0],
+      }
     with open(self.TemplatePath, 'r') as templateEmail:
       outputEmail = templateEmail.read()
+
+    for dummy, value in replaceTextDict.iteritems():
+        outputEmail = outputEmail.replace(dummy, value)
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)

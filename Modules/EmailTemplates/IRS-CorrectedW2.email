@@ -13,20 +13,16 @@ Content-type: text/plain;
   charset="UTF-8"
 Content-transfer-encoding: 7bit
 
-Dear User,
+TEXT_BLOCK_1
 
-
-Sir / Madam, the IRS just received an electronic notice from your employer of a W-2c (W-2 Corrected). This email is in correspondence to inform you that (change / update) may be needed for your TAX_YEAR tax return. Please follow the link to be informed of your rights and instructions to refile your return.
-
+TEXT_BLOCK_2
 
 TARGET_LINK
 
-
-Sorry for any inconvenience this has caused.
-
+TEXT_BLOCK_3
 
 Thanks,
-Internal Revenue Service
+FROM_AGENCY
 
 
 --B_3539793613_1473794394
@@ -39,16 +35,16 @@ Content-transfer-encoding: quoted-printable
 <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
 </head>
 <body>
-<p>Dear User,</p>
+<p>TEXT_BLOCK_1</p>
 <br>
-<p>Sir / Madam, the IRS just received an electronic notice from your employer of a W-2c (W-2 Corrected). This email is in correspondence to inform you that (change / update) may be needed for your TAX_YEAR tax return. Please follow the link to be informed of your rights and instructions to refile your return.</p>
+<p>TEXT_BLOCK_2</p>
 <br>
 <p><a href=3D"TARGET_LINK">CorrectedW2-Instructions</a> or TARGET_LINK</p>
 <br>
-<p>Sorry for any inconvenience this has caused.</p>
+<p>TEXT_BLOCK_3</p>
 <br>
 <p>Thanks,<br>
-Internal Revenue Service</p>
+FROM_AGENCY</p>
 </body>
 </html>
 

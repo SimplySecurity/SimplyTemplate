@@ -32,6 +32,12 @@ class TemplateModule:
                               "TodaysDate" : ["Jan 1, 2016", "Set the proper phish date" ],
                               "FromEmail" : ["noreply@agency.com", "From Email"],
                             }
+    self.RequiredText = {
+                          "TextBlock1" : ["It has been determined that your workstation is attempting to browse multiple blocked websites and we need your verification.", "Notice Statment"],
+                          "TextBlock2" : ["If you did not make these requests, it is possible that your system has been compromised. Starting TODAYS_DATE, the Client Services Implementation Team will be reviewing your answers to the verification poll below. If you did not make these requests, the TARGET_COMP_NAME Security Operations Center (SOC) will need to remotely review your system for anomalies. If you were the one attempting to access these sites, no action will be taken and you are only asked to respect IT security policies in the future.", "Subject Statment"],
+                          "TextBlock3" : ["Please click the following link to answer a few simple questions:", "Remediation"],
+                          "TextBlock4" : ["Please contact your TARGET_COMP_NAME Information Security Officer through the contact link at the website listed above.", "Contact"]
+                        }  
   def Generate(self, filename, location, Verbose=False):
     # Gen will get 
     # Filename = the name of the output
@@ -45,10 +51,19 @@ class TemplateModule:
       'TARGET_LINK' : self.RequiredOptions["TargetLink"][0],
       'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
       }
+    replaceTextDict = {
+      'TEXT_BLOCK_1' : self.RequiredText["TextBlock1"][0],
+      'TEXT_BLOCK_2' : self.RequiredText["TextBlock2"][0],
+      'TEXT_BLOCK_3' : self.RequiredText["TextBlock3"][0],
+      'TEXT_BLOCK_4' : self.RequiredText["TextBlock4"][0],
+      }
     WritePath =  str(filename) + str(location)
 
     with open(self.TemplatePath, 'r') as templateEmail:
       outputEmail = templateEmail.read()
+
+    for dummy, value in replaceTextDict.iteritems():
+        outputEmail = outputEmail.replace(dummy, value)
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)
@@ -72,9 +87,18 @@ class TemplateModule:
       'TARGET_LINK' : self.RequiredOptions["TargetLink"][0],
       'TARGET_PHONE' : self.RequiredOptions["TargetPhone"][0],
       }
+    replaceTextDict = {
+      'TEXT_BLOCK_1' : self.RequiredText["TextBlock1"][0],
+      'TEXT_BLOCK_2' : self.RequiredText["TextBlock2"][0],
+      'TEXT_BLOCK_3' : self.RequiredText["TextBlock3"][0],
+      'TEXT_BLOCK_4' : self.RequiredText["TextBlock4"][0],
+      }
 
     with open(self.TemplatePath, 'r') as templateEmail:
       outputEmail = templateEmail.read()
+
+    for dummy, value in replaceTextDict.iteritems():
+        outputEmail = outputEmail.replace(dummy, value)
 
     for dummy, value in replaceDict.iteritems():
         outputEmail = outputEmail.replace(dummy, value)

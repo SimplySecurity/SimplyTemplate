@@ -10,6 +10,7 @@ import subprocess
 import re
 import collections
 from os.path import expanduser
+from Helpers import TemplateEdit
 from Helpers import Helpers 
 
 
@@ -38,6 +39,7 @@ class Conducter:
                                 ("SampleImage:"),
                                 ("Info:")]
         self.TemplateCommands = [   ("set","Set a option for the Template"),
+                                    ("edit","Edit a large chunk of template"),
                                     ("info","Info about loaded Templates"),
                                     ("gen","Generate Template"),
                                     ("view","View Sample Template"),
@@ -342,6 +344,27 @@ class Conducter:
             print e
             print Helpers.color(" [!] Error in setting option, likely invalid option name.", firewall=True)
 
+    def TemplateEdit(self, Task, Value, Raw):
+        try:
+            try:
+                if Task.RequiredText:
+                    EditValue = True
+            except:
+                EditValue = False
+                print Helpers.color(" [!] Template does not support edit yet!")
+            if EditValue:
+                if Value[1] not in Task.RequiredText :
+                    print Helpers.color(" [!] Invalid option specified.", firewall=True)
+                else:
+                     Text = Task.RequiredText[Value[1]][0]
+                     raw = TemplateEdit.root(Text)
+                     Task.RequiredText[Value[1]][0] = raw
+                     return
+                #raw = TemplateEdit.root(str(self.RequiredText["TextBlock1"][0]))
+        except Exception as e:
+            print e
+
+
     def TemplateLocation(self):
         '''
         This function will return the location output 
@@ -394,7 +417,7 @@ class Conducter:
                 if ".eml" in RenderName:
                     subprocess.check_call(["icedove", RenderName])
                 else:
-                    subprocess.check_call(["iceweasel", RenderName])
+                    temp = subprocess.check_call(["iceweasel", RenderName])
                 #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
@@ -436,6 +459,15 @@ class Conducter:
             print " -------\t\t---------\t\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
                 print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
+            try:
+                if Task.RequiredText:
+                    print Helpers.color("\n Template TextEdit Options:\n", status=True)  
+                    print " Setting\t\tValue Set\t\t\tDescription of Setting"
+                    print " -------\t\t---------\t\t\t----------------------"
+                    for key in sorted(Task.RequiredText.iterkeys()):
+                        print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredText[key][0].replace("\n", "")[0:25] + str('..')).ljust(32), Task.RequiredText[key][1])
+            except Exception as e:
+                pass
         except Exception as e:
             print e
             p = " [!] Please select a valid Module number\n"
@@ -507,10 +539,16 @@ class Conducter:
                     except Exception as e:
                         print e
                         print Helpers.color(" [!] You must use [set] with Value", firewall=True)
+                if a.startswith("edit") or a.startswith("e"):
+                    try:
+                        Split = Helpers.GetWords(a)
+                        if Split[0].lower() == "edit" or Split[0].lower() == "s":
+                            self.TemplateEdit(Task, Split, a)
+                    except Exception as e:
+                        print Helpers.color(" [!] You must use [edit] with Value", firewall=True)
                 if a.lower() == "gen" or a.lower() == "g" or a.lower() == "run":
                     self.TemplateGen(Task, ModuleInt)
                 if a.lower() == "info" or a.lower() == "i":
-                    print "here"
                     self.Template_Info(Task)
                 if a.lower() == "view" or a.lower() == "v":
                     self.TemplateView(Task)
