@@ -8,17 +8,22 @@ of delivering emails is the Spear Phish in Cobalt strike so you will see proper 
 Current Platforms Supported:
 * Kali Linux 2.0
 * Kali Linux 1.0
+* Debian (deb8u3)
 
 Work Conducted by:
 ----------------------------------------------
 * Alexander Rymdeko-Harvey [Twitter] @Killswitch-GUI -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
-* Keelyn Roberts [Twitter] @real_slacker007 -- [Web] [CyberSydicates.com](http://cybersyndicates.com)
+
+Major Call Outs!:
+----------------------------------------------
+* Chris Ross [@xorrior]
 * Steve Borosh [@rvrsh3ll] -- [web] [www.rvrsh3ll.net](http://www.rvrsh3ll.net/blog/)
-* 
+* ATD Team [@VerisGroup] -- [web] [https://www.verisgroup.com/adaptive-threat-division/](https://www.verisgroup.com/adaptive-threat-division/)
+
 
 A few small benefits:
 - Easy for you to write modules (All you need is 1 required Class option and you're up and running)
-- Simple intergration of Email Templates
+- Simple integration of Email Templates
 - Also the ability to change major settings fast without diving into the code (Coming)
 
 ## Understanding Module Types
@@ -37,7 +42,7 @@ Core Options:
 - Attachment == Can support text that tells users to open or use the supplied attachment.
 
 Email Rendering:
-- Html == This was used by some to view the HTML markup but CSS dose not render correctly
+- Html == This was used by some to view the HTML markup but CSS does not render correctly (Basic Templates)
 - eml == Files can be outputed via .EML to open them directly in Icedove or Outlook
 - mht == MHTML is the Mail Html Markup used and can directly rendered in Word/IE or Iceweasel via plugin
 
