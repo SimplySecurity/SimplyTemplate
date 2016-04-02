@@ -25,12 +25,12 @@ def save_command(textPad, root):
   ReturnText = str(data)
   root.destroy()
 
-def exit_command():
+def exit_command(root):
   if tkMessageBox.askokcancel("Quit", "Do you really want to quit?"):
     root.destroy()
 
 def about_command():
-    label = tkMessageBox.showinfo("About", "SimplyTemplate Editor \n Copyright \n No rights left to reserve")
+    label = tkMessageBox.showinfo("About", "SimplyTemplate Editor")
 
 def root(Text):
   global ReturnText
@@ -42,7 +42,7 @@ def root(Text):
   menu.add_cascade(label="File", menu=filemenu)
   filemenu.add_command(label="Save", command=lambda : save_command(textPad, root))
   filemenu.add_separator()
-  filemenu.add_command(label="Exit", command=exit_command)
+  filemenu.add_command(label="Exit", command=lambda : exit_command(root))
   helpmenu = Menu(menu)
   menu.add_cascade(label="Help", menu=helpmenu)
   helpmenu.add_command(label="About...", command=about_command)
@@ -50,5 +50,11 @@ def root(Text):
   textPad.pack()
   build(textPad, Text)
   root.mainloop()
-  return ReturnText
+  try:
+    if ReturnText:
+      return ReturnText
+  except:
+    print " [!] No text returned / changed"
+    pass
+
   

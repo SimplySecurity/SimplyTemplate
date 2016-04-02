@@ -49,6 +49,7 @@ class TemplateModule:
       'TARGET_LINK'    : self.RequiredOptions["TargetLink"][0],
       'TAX_YEAR'    : self.RequiredOptions["TaxYear"][0],
       }
+      
     replaceTextDict = {
       'TEXT_BLOCK_1' : self.RequiredText["TextBlock1"][0],
       'TEXT_BLOCK_2' : self.RequiredText["TextBlock2"][0],

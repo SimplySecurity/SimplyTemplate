@@ -11,6 +11,7 @@ import re
 import collections
 from os.path import expanduser
 from Helpers import TemplateEdit
+from Helpers import CmdLoop
 from Helpers import Helpers 
 
 
@@ -99,42 +100,6 @@ class Conducter:
                 # print "\t[" + item[0] + "]\t\t" + item[1]
                 print "\t[{0}]\t\t{1}".format(item[0],item[1])
 
-    def PromptSelection(self):
-        # We also have to strip off and verfiy the number
-        # make sure we strip when checking command
-        p = " [>] "
-        a = raw_input(Helpers.color(p,status=True))
-        # Gives me a list of words of ints
-        try:
-            Split = Helpers.GetWords(a)
-            if Split[0].lower() == "use" or Split[0].lower() == "u":
-                # we will use this to select our module of choice
-                # it will call a seprate function to handle the Int
-                # of the requested module
-
-                Task = self.ModuleSelection(Split)
-                self.TemplateMenu(Task, Split)
-            if Split[0].lower() == "info" or Split[0].lower() == "i":
-                self.ModuleInfo(Split)
-        except Exception as e:
-            pass
-        if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
-            self.ModuleHelp()
-        try:
-            if Split[0].lower() == "search" or Split[0].lower() == "s":
-                self.ModuleSearch(Split)
-        except Exception as e:
-            pass
-        if a.lower() == "list" or a.lower() == "l":
-            self.ListModules()
-            self.PromptSelection()
-        if a.lower() == "update" or a.lower() == "u":
-            Helpers.SelfUpdate()
-        if a.lower() == "exit":
-            Helpers.Exit()
-        else:
-            self.PromptSelection()
-        return a
 
     def ModuleSearch(self, SearchTerm):
         '''
@@ -358,7 +323,8 @@ class Conducter:
                 else:
                      Text = Task.RequiredText[Value[1]][0]
                      raw = TemplateEdit.root(Text)
-                     Task.RequiredText[Value[1]][0] = raw
+                     if raw:
+                        Task.RequiredText[Value[1]][0] = raw
                      return
                 #raw = TemplateEdit.root(str(self.RequiredText["TextBlock1"][0]))
         except Exception as e:
@@ -519,18 +485,150 @@ class Conducter:
                 self.TaskSelector()
         print line 
 
+    ######################################
+    #                                    #
+    #  Main Command Loop setup           #
+    #                                    #
+    ######################################
+
+    def MainCmdLoopCommands(self):
+        '''
+        Takes in Task/Module grabs the 
+        required options and builds a 
+        tab complete list for the
+        command loop.
+        '''
+        try:
+            cmddict = {}
+            modulelist = []
+            # add in set commands
+            #for key in self.Modules:
+            #   modulelist.append(str(key))
+            #cmddict['use']= modulelist
+            cmddict['use']= ""
+            # add list command
+            cmddict['list'] = ""
+            # add info command 
+            cmddict['info'] = ""
+            # add search command 
+            cmddict['search'] = ""
+            # add update command
+            cmddict['update'] = ""
+            # add help command
+            cmddict['help'] = ""
+            # add exit command 
+            cmddict['exit'] = ""
+            return cmddict
+        except Exception as e:
+            p = ""
+            print e
+
+
+    def PromptSelection(self):
+        # setup module commands and required lists 
+        cmddict = self.MainCmdLoopCommands()
+        # now call cmd loop
+        CmdLoop.start_loop(cmddict)
+        # We also have to strip off and verfiy the number
+        # make sure we strip when checking command
+        #p = " [>] "
+        #a = raw_input(Helpers.color(p,status=True))
+        a = CmdLoop.input_loop()
+        # Gives me a list of words of ints
+        try:
+            Split = Helpers.GetWords(a)
+            if Split[0].lower() == "use" or Split[0].lower() == "u":
+                # we will use this to select our module of choice
+                # it will call a seprate function to handle the Int
+                # of the requested module
+
+                Task = self.ModuleSelection(Split)
+                self.TemplateMenu(Task, Split)
+            if Split[0].lower() == "info" or Split[0].lower() == "i":
+                self.ModuleInfo(Split)
+        except Exception as e:
+            pass
+        if a.lower() == "help" or a.lower() == "h" or a.lower() == "?":
+            self.ModuleHelp()
+        try:
+            if Split[0].lower() == "search" or Split[0].lower() == "s":
+                self.ModuleSearch(Split)
+        except Exception as e:
+            pass
+        if a.lower() == "list" or a.lower() == "l":
+            self.ListModules()
+            self.PromptSelection()
+        if a.lower() == "update" or a.lower() == "u":
+            Helpers.SelfUpdate()
+        if a.lower() == "exit":
+            Helpers.Exit()
+        else:
+            self.PromptSelection()
+        return a
+
+    ######################################
+    #                                    #
+    # Template Command Loop setup        #
+    #                                    #
+    ######################################
+
+    def TemplateCmdLoopCommands(self, Task):
+        '''
+        Takes in Task/Module grabs the 
+        required options and builds a 
+        tab complete set list for the
+        command loop.
+        '''
+        try:
+            cmddict = {}
+            setlist = []
+            editlist = []
+            # add in set commands
+            for key in sorted(Task.RequiredOptions.iterkeys()):
+                setlist.append(key)
+            cmddict['set']= setlist
+            # add in edit command
+            try:
+                for key in sorted(Task.RequiredText.iterkeys()):
+                    editlist.append(key)
+                cmddict['edit']= editlist
+            except:
+                # edit is not a required command
+                pass
+            # add info command
+            cmddict['info'] = ""
+            # add gen command 
+            cmddict['gen'] = ""
+            # add view command 
+            cmddict['view'] = ""
+            # add render command
+            cmddict['render'] = ""
+            # add back command
+            cmddict['back'] = ""
+            # add exit command 
+            cmddict['exit'] = ""
+            return cmddict
+        except Exception as e:
+            p = ""
+            print e
+
 
     def TemplateMenu(self, Task, ModuleInt):
+
         # start with Template menu and printing out the modules
         self.TitleScreen()
         p = "\n Template Loaded: " + Helpers.color(Task.Name, status=True)
         print p + "\n\n"
         self.TemplateRequiredOptions(Task)
         self.ModuleCommands()
+        # setup module commands and required lists 
+        cmddict = self.TemplateCmdLoopCommands(Task)
+        # now call cmd loop
+        CmdLoop.start_loop(cmddict)
         while True:
             try:
-                p = " [>] "
-                a = raw_input(Helpers.color(p,status=True))
+                a = CmdLoop.input_loop()
+                #a = raw_input(Helpers.color(p,status=True))
                 if a.startswith("set") or a.startswith("s"):
                     try:
                         Split = Helpers.GetWords(a)
@@ -542,7 +640,7 @@ class Conducter:
                 if a.startswith("edit") or a.startswith("e"):
                     try:
                         Split = Helpers.GetWords(a)
-                        if Split[0].lower() == "edit" or Split[0].lower() == "s":
+                        if Split[0].lower() == "edit" or Split[0].lower() == "e":
                             self.TemplateEdit(Task, Split, a)
                     except Exception as e:
                         print Helpers.color(" [!] You must use [edit] with Value", firewall=True)
@@ -578,5 +676,5 @@ class Conducter:
         print " ============================================================"
         print " Current: " + self.version + " | SimplyTemplate | " + Helpers.color(w, status=True) + ": CyberSyndicates.com"
         print " ============================================================"
-        print "   " + Helpers.color(p, status=True) + ": @real_slacker007 | " + Helpers.color(p, status=True) + ": @Killswitch_gui"
+        print "   " + Helpers.color(p, status=True) + ": @CyberSyndicates  | " + Helpers.color(p, status=True) + ": @Killswitch_gui"
         print " ============================================================"
