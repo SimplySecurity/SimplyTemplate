@@ -43,7 +43,7 @@ func_install_requests(){
   sudo apt-get -y install icedove 
   sudo apt-get install iceweasel
   # we need to check for front end for this install
-  if export | grep "DEBIAN_FRONTEND=noninteractive"; then
+  if [export | grep "DEBIAN_FRONTEND=noninteractive"]; then
     echo noninteractive
   else
     sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi
