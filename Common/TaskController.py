@@ -106,33 +106,63 @@ class Conducter:
         '''
         SophisticationList = []
         CoreOptionsList = []
-        if SearchTerm[1]:
+        NameList = [] 
+        # check for less than 2x items
+        if len(SearchTerm) <= 1:
+            # make sure they are using the correct items to search
+            p = " [!] Please search by one of the options (sophistication)-(options)-(name) HINT-use tab"
+            print Helpers.color(p, firewall=True)
+            return
+        # check for no search value
+        if len(SearchTerm) <= 2:
+            # make sure they are using the correct items to search
+            p = " [!] Please use a search term!"
+            print Helpers.color(p, firewall=True)
+            return
+        # search SophisticationList
+        if SearchTerm[1] in 'sophistication':
             try:
                 for name in self.Modules:
-                    SelectedModule = self.Modules[name]
-                    Task = SelectedModule.TemplateModule()
-                    Sophistication = Task.Sophistication
-                    if SearchTerm[1].lower() in Sophistication.lower():
-                        # add in the matching Result
-                        SophisticationList.append(str(name))
+                    try:
+                        SelectedModule = self.Modules[name]
+                        Task = SelectedModule.TemplateModule()
+                        Sophistication = Task.Sophistication
+                        if SearchTerm[2].lower() in Sophistication.lower():
+                            # add in the matching Result
+                            SophisticationList.append(str(name))
+                    except:
+                        pass
+            except Exception as e:
+                print e
+        if SearchTerm[1] in 'options':
+            try:
+                for name in self.Modules:
+                    try:
+                        SelectedModule = self.Modules[name]
+                        Task = SelectedModule.TemplateModule()
+                        CoreOptions = Task.CoreOptions
+                        if SearchTerm[2] in CoreOptions.lower():
+                            # add in the matching Result
+                            CoreOptionsList.append(str(name))
+                    except:
+                        pass
+            except Exception as e:
+                print e
+        if SearchTerm[1] in 'name':
+            try:
+                for name in self.Modules:
+                    try:
+                        if SearchTerm[2].lower() in name.lower():
+                            # add in the matching Result
+                            NameList.append(str(name))
+                    except:
+                        pass
             except Exception as e:
                 print e
 
-        if SearchTerm[1]:
-            try:
-                for name in self.Modules:
-                    SelectedModule = self.Modules[name]
-                    Task = SelectedModule.TemplateModule()
-                    CoreOptions = Task.CoreOptions
-                    if SearchTerm[1] in CoreOptions.lower():
-                        # add in the matching Result
-                        CoreOptionsList.append(str(name))
-            except Exception as e:
-                print e
+        self.ListSearchModules(CoreOptionsList, SophisticationList, NameList)
 
-        self.ListSearchModules(CoreOptionsList, SophisticationList)
-
-    def ListSearchModules(self, ModuleList, ModuleList2):
+    def ListSearchModules(self, ModuleList, ModuleList2, ModuleList3):
         '''
         Takes an array of Modules to print rather than all modules.
         '''
@@ -153,6 +183,17 @@ class Conducter:
             print "     ----------------------------------\t\t\t-------------\t\t---------------"
             x = 1
             for name in ModuleList2:
+                SelectedModule = self.Modules[name]
+                Task = SelectedModule.TemplateModule()
+                print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
+                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                x += 1
+            print ""
+        if ModuleList3:
+            print Helpers.color("\n  [*] Name Search Results are:\t\tCore Options:\t\tSophistication:", blue=True)
+            print "     ----------------------------------\t\t\t-------------\t\t---------------"
+            x = 1
+            for name in ModuleList3:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
                 print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
@@ -508,7 +549,8 @@ class Conducter:
             # add info command 
             cmddict['info'] = ""
             # add search command 
-            cmddict['search'] = ""
+            search = ['sophistication', 'options', 'name']
+            cmddict['search'] = search
             # add update command
             cmddict['update'] = ""
             # add help command
