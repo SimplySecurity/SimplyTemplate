@@ -7,7 +7,7 @@ from Common import TaskController
 
 def cli_parser():
     parser = argparse.ArgumentParser(add_help=False, description='''
-        Build's out full emails for an OP.
+        Builds out full emails for an OP.
         ''')
     parser.add_argument(
         "-l", action='store_true', help="List the current Modules Loaded")
@@ -23,7 +23,7 @@ def cli_parser():
 
 def TaskManger():
     # Get all the options passed and pass it to the TaskConducter, this will
-    # keep all the prcessing on the side.
+    # keep all the processioning on the side.
     # need to pass the store true somehow to tell printer to restrict output
     cli_list, cli_verbose = cli_parser()
     Task = TaskController.Conducter()
@@ -33,7 +33,7 @@ def TaskManger():
     Task.TaskSelector()
 
 def main():
-    # instatiate the class
+    # instantiate the class
     TaskManger()
 
 if __name__ == "__main__":

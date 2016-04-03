@@ -12,7 +12,7 @@ import collections
 from os.path import expanduser
 from Helpers import TemplateEdit
 from Helpers import CmdLoop
-from Helpers import Helpers 
+from Helpers import Helpers
 
 
 class Conducter:
@@ -26,27 +26,27 @@ class Conducter:
         self.Modules = collections.OrderedDict()
         self.Dmodules = collections.OrderedDict()
         self.LoadModules()
-        self.Commands = [   ("use","Select a template for use"),
-                            ("list","List loaded Templates"),
-                            ("info","Display metadata about a module"),
-                            ("search","Search by Core Options / Sophistication"),
-                            ("update","Update SimplyTemplate from Github"),
-                            ("help","Display this menu"),
-                            ("exit","Exit SimplyTemplate")]
+        self.Commands = [   ("use", "Select a template for use"),
+                            ("list", "List loaded Templates"),
+                            ("info", "Display meta data about a module"),
+                            ("search", "Search by Core Options / Sophistication"),
+                            ("update", "Update SimplyTemplate from Git-hub"),
+                            ("help", "Display this menu"),
+                            ("exit", "Exit SimplyTemplate")]
         self.TemplateInfo =[   ("Name:"),
                                 ("Author"),
                                 ("Type:"),
                                 ("Sophistication:"),
                                 ("SampleImage:"),
                                 ("Info:")]
-        self.TemplateCommands = [   ("set","Set a option for the Template"),
-                                    ("edit","Edit a large chunk of template"),
-                                    ("info","Info about loaded Templates"),
-                                    ("gen","Generate Template"),
-                                    ("view","View Sample Template"),
-                                    ("render","Render Html of Email"),
-                                    ("back","Go back to main Menu"),
-                                    ("exit","Exit SimplyTemplate")]
+        self.TemplateCommands = [   ("set", "Set a option for the Template"),
+                                    ("edit", "Edit a large chunk of template"),
+                                    ("info", "Info about loaded Templates"),
+                                    ("gen", "Generate Template"),
+                                    ("view", "View Sample Template"),
+                                    ("render", "Render Html of Email"),
+                                    ("back", "Go back to main Menu"),
+                                    ("exit", "Exit SimplyTemplate")]
         
         # create required array
     
@@ -61,8 +61,8 @@ class Conducter:
                 self.Modules[name] = loaded_modules
                 self.Dmodules[x] = loaded_modules
                 x += 1
-        #print self.Dmodules
-        #print self.Modules
+        # print self.Dmodules
+        # print self.Modules
 
     def ListModules(self):
         self.TitleScreen()
@@ -100,7 +100,6 @@ class Conducter:
                 # print "\t[" + item[0] + "]\t\t" + item[1]
                 print "\t[{0}]\t\t{1}".format(item[0],item[1])
 
-
     def ModuleSearch(self, SearchTerm):
         '''
         Takes in a array of strings and searched by them
@@ -132,7 +131,6 @@ class Conducter:
                 print e
 
         self.ListSearchModules(CoreOptionsList, SophisticationList)
-
 
     def ListSearchModules(self, ModuleList, ModuleList2):
         '''
@@ -193,7 +191,7 @@ class Conducter:
                 elif task == "Task.SampleImage":
                     print "\t" + item + "\t\t" + eval(task)
                 elif task == "Task.Info":
-                    print Helpers.FormatLong("Info:",Task.Info, spacing=24)
+                    print Helpers.FormatLong("Info:", Task.Info, spacing=24)
                 else:
                     print "\t" + item + "\t\t\t" + eval(task)
             # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
@@ -261,21 +259,21 @@ class Conducter:
             return
 
     def ModuleHelp(self):
-            print "\tAvailiable Commands:"
+            print "\tAvailable Commands:"
             print "\t-----------------------------------------"
             for item in self.Commands:
                 if item[0] == "update":
                     print "\t[" + item[0] + "]\t" + item[1]
                 else:
                     print "\t[" + item[0] + "]\t\t" + item[1]
-            print "\n\tAvailiable Template Commands:"
+            print "\n\tAvailable Template Commands:"
             print "\t-----------------------------------------"
             for item in self.TemplateCommands:
                 print "\t[" + item[0] + "]\t\t" + item[1]
             return
 
     def ModuleCommands(self):
-        print Helpers.color("\n Availiable Template Commands:\n", status=True)
+        print Helpers.color("\n Available Template Commands:\n", status=True)
         print "\tCommand\t\tDescription"
         print "\t-------\t\t-----------"
         for item in self.TemplateCommands:
@@ -288,7 +286,7 @@ class Conducter:
         except Exception as e:
             s = "status 4"
             if s in str(e):
-                print Helpers.color(" [!] Sorry no image submited yet!")
+                print Helpers.color(" [!] Sorry no image submitted yet!")
             else:
                 print Helpers.color(" [!] Is a default image viewer installed?")
 
@@ -296,7 +294,7 @@ class Conducter:
         try:
             option = Value[1]
             if Value[1] not in Task.RequiredOptions:
-                print Helpers.color(" [!] Invalid option specified.", firewall=True)   
+                print Helpers.color(" [!] Invalid option specified.", firewall=True)  
 
             else:
                 Raw = Raw.strip(Value[0])
@@ -318,7 +316,7 @@ class Conducter:
                 EditValue = False
                 print Helpers.color(" [!] Template does not support edit yet!")
             if EditValue:
-                if Value[1] not in Task.RequiredText :
+                if Value[1] not in Task.RequiredText:
                     print Helpers.color(" [!] Invalid option specified.", firewall=True)
                 else:
                      Text = Task.RequiredText[Value[1]][0]
@@ -326,14 +324,13 @@ class Conducter:
                      if raw:
                         Task.RequiredText[Value[1]][0] = raw
                      return
-                #raw = TemplateEdit.root(str(self.RequiredText["TextBlock1"][0]))
+                # raw = TemplateEdit.root(str(self.RequiredText["TextBlock1"][0]))
         except Exception as e:
             print e
 
-
     def TemplateLocation(self):
         '''
-        This function will return the location output 
+        This function will return the location output
         This will default to the ~/Desktop/ folder
         '''
         while True:
@@ -351,13 +348,13 @@ class Conducter:
 
     def TemplateName(self, Task):
         '''
-        This function will return the location output 
+        This function will return the location output
         This will default to the ~/Desktop/ folder
         '''
         while True:
             try:
                 name = Task.OutputName
-                p = " [>] Output Name (Default: " + name + "):" 
+                p = " [>] Output Name (Default: " + name + "):"
                 a = raw_input(Helpers.color(p,status=True))
                 if a:
                     return a
@@ -369,7 +366,7 @@ class Conducter:
 
     def TemplateRender(self, Task):
         '''
-        This function will return the location output 
+        This function will return the location output
         This will default to the ~/Desktop/ folder
         '''
         try:
@@ -464,7 +461,7 @@ class Conducter:
            Task Performed:\t\t{1}
            File Location: \t\t{2}
            Email File:\t\t\t{3}
-        """.format(Helpers.color(p, green=True),Task.Name,FileLocation,FileName)
+        """.format(Helpers.color(p, green=True), Task.Name, FileLocation, FileName)
         print line 
         # Now check if they want to open the file
         p = Helpers.color(" [>] ", status=True) + "Would you like to view the generated template? (y) or (n): "
@@ -502,10 +499,10 @@ class Conducter:
             cmddict = {}
             modulelist = []
             # add in set commands
-            #for key in self.Modules:
+            # for key in self.Modules:
             #   modulelist.append(str(key))
-            #cmddict['use']= modulelist
-            cmddict['use']= ""
+            # cmddict['use']= modulelist
+            cmddict['use'] = ""
             # add list command
             cmddict['list'] = ""
             # add info command 
@@ -523,7 +520,6 @@ class Conducter:
             p = ""
             print e
 
-
     def PromptSelection(self):
         # setup module commands and required lists 
         cmddict = self.MainCmdLoopCommands()
@@ -531,15 +527,15 @@ class Conducter:
         CmdLoop.start_loop(cmddict)
         # We also have to strip off and verfiy the number
         # make sure we strip when checking command
-        #p = " [>] "
-        #a = raw_input(Helpers.color(p,status=True))
+        # p = " [>] "
+        # a = raw_input(Helpers.color(p,status=True))
         a = CmdLoop.input_loop()
         # Gives me a list of words of ints
         try:
             Split = Helpers.GetWords(a)
             if Split[0].lower() == "use" or Split[0].lower() == "u":
                 # we will use this to select our module of choice
-                # it will call a seprate function to handle the Int
+                # it will call a separate function to handle the Int
                 # of the requested module
 
                 Task = self.ModuleSelection(Split)
@@ -574,8 +570,8 @@ class Conducter:
 
     def TemplateCmdLoopCommands(self, Task):
         '''
-        Takes in Task/Module grabs the 
-        required options and builds a 
+        Takes in Task/Module grabs the
+        required options and builds a
         tab complete set list for the
         command loop.
         '''
@@ -597,21 +593,20 @@ class Conducter:
                 pass
             # add info command
             cmddict['info'] = ""
-            # add gen command 
+            # add gen command
             cmddict['gen'] = ""
-            # add view command 
+            # add view command
             cmddict['view'] = ""
             # add render command
             cmddict['render'] = ""
             # add back command
             cmddict['back'] = ""
-            # add exit command 
+            # add exit command
             cmddict['exit'] = ""
             return cmddict
         except Exception as e:
             p = ""
             print e
-
 
     def TemplateMenu(self, Task, ModuleInt):
 
@@ -621,14 +616,14 @@ class Conducter:
         print p + "\n\n"
         self.TemplateRequiredOptions(Task)
         self.ModuleCommands()
-        # setup module commands and required lists 
+        # setup module commands and required lists
         cmddict = self.TemplateCmdLoopCommands(Task)
         # now call cmd loop
         CmdLoop.start_loop(cmddict)
         while True:
             try:
                 a = CmdLoop.input_loop()
-                #a = raw_input(Helpers.color(p,status=True))
+                # a = raw_input(Helpers.color(p,status=True))
                 if a.startswith("set") or a.startswith("s"):
                     try:
                         Split = Helpers.GetWords(a)
