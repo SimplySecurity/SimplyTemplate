@@ -49,7 +49,14 @@ def FormatLong(title, message, frontTab=True, spacing=16):
             returnString += "\n"+' '*spacing+lines[i]
         i += 1
     return returnString
-    
+
+def Reindent(s, numSpaces):
+    # http://code.activestate.com/recipes/66055-changing-the-indentation-of-a-multi-line-string/
+    s = string.split(s, '\n')
+    s = [(numSpaces * ' ') + string.lstrip(line) for line in s]
+    s = string.join(s, '\n')
+    return s
+
 def DirectoryListing(directory):
     # Returns a list of dir's of results
     dirs = []

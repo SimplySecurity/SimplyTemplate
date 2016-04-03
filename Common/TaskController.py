@@ -44,6 +44,7 @@ class Conducter:
                                     ("info", "Info about loaded Templates"),
                                     ("gen", "Generate Template"),
                                     ("view", "View Sample Template"),
+                                    ("print", "Print to Console Sample Template"),
                                     ("render", "Render Html of Email"),
                                     ("back", "Go back to main Menu"),
                                     ("exit", "Exit SimplyTemplate")]
@@ -405,6 +406,30 @@ class Conducter:
             except Exception as e:
                 print e
 
+    def TemplatePrint(self, Task):
+        '''
+        This function will print 
+        to the console the output of the email.
+        '''
+        try:
+            EmailRender = Task.Render()
+            RenderName = Task.RenderName
+            with open(RenderName, "wr") as myfile:
+                myfile.write(EmailRender)
+            try:
+                # time.sleep(0)
+                temp = "\n"
+                temp += subprocess.check_output(["w3m", "-dump", "-T", "text/html", RenderName])
+                print Helpers.reindent(temp, 1)
+                #time.sleep(5)
+            except Exception as e:
+                print Helpers.color(" [!] Is w3m installed (run Setup.sh)?")
+            # now remove temp file
+            # time.sleep(2)
+            os.remove(RenderName)
+        except Exception as e:
+            print e
+
     def TemplateRender(self, Task):
         '''
         This function will return the location output
@@ -639,6 +664,8 @@ class Conducter:
             cmddict['gen'] = ""
             # add view command
             cmddict['view'] = ""
+            # add print command
+            cmddict['print'] = ""
             # add render command
             cmddict['render'] = ""
             # add back command
@@ -687,6 +714,8 @@ class Conducter:
                     self.Template_Info(Task)
                 if a.lower() == "view" or a.lower() == "v":
                     self.TemplateView(Task)
+                if a.lower() == "print" or a.lower() == "p":
+                    self.TemplatePrint(Task)
                 if a.lower() == "render" or a.lower() == "r":
                     self.TemplateRender(Task)
                 if a.lower() == "back" or a.lower() == "b":

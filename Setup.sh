@@ -41,6 +41,7 @@ func_install_requests(){
   sudo git pull
   sudo easy_install pip
   sudo apt-get -y install icedove 
+  sudo apt-get -y install w3m 
   sudo apt-get install iceweasel
   # we need to check for front end for this install
   if [export | grep "DEBIAN_FRONTEND=noninteractive"]; then
@@ -51,6 +52,7 @@ func_install_requests(){
     iceweasel unmht-8.1.0.xpi
   fi
   sudo pip install glob2 --upgrade
+  sudo pip install textwrap --upgrade
   sudo pip install configparser --upgrade
   sudo chmod +x SimplyTemplate.py
   sudo rm unmht-8.1.0.xpi
