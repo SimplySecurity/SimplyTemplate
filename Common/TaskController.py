@@ -420,10 +420,11 @@ class Conducter:
                 # time.sleep(0)
                 temp = "\n"
                 temp += subprocess.check_output(["w3m", "-dump", "-T", "text/html", RenderName])
-                print Helpers.reindent(temp, 1)
+                print Helpers.Reindent(temp, 1)
                 #time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is w3m installed (run Setup.sh)?")
+                print e
             # now remove temp file
             # time.sleep(2)
             os.remove(RenderName)

@@ -44,18 +44,17 @@ func_install_requests(){
   sudo apt-get -y install w3m 
   sudo apt-get install iceweasel
   # we need to check for front end for this install
-  if [export | grep "DEBIAN_FRONTEND=noninteractive"]; then
-    echo noninteractive
-  else
-    sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi
-    sudo whiptail --msgbox "Please Hit (Install Now) & Please Close Iceweasel!" 10 40 
-    iceweasel unmht-8.1.0.xpi
-  fi
+  cd /tmp/
+  sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi 
+  sudo whiptail --msgbox "Please Hit (Install Now) & Please Close Iceweasel!" 10 40 &&
+  sleep 5
+  iceweasel unmht-8.1.0.xpi &&
+  sleep 5
   sudo pip install glob2 --upgrade
-  sudo pip install textwrap --upgrade
   sudo pip install configparser --upgrade
   sudo chmod +x SimplyTemplate.py
-  sudo rm unmht-8.1.0.xpi
+  sleep 5
+  sudo rm /tmp/unmht-8.1.0.xpi
 }
 
 
