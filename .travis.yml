@@ -2,6 +2,7 @@ language: python
 python:
   - "2.7"
 script:
+  - "sudo ./Setup.sh"
   - "sudo ./SimplyTemplate.py -l -v"
   - "sudo ./SimplyTemplate.py -h"
   - "sudo ./SimplyTemplate.py"

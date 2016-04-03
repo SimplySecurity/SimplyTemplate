@@ -54,7 +54,6 @@ func_install_requests(){
   sudo pip install configparser --upgrade
   sudo chmod +x SimplyTemplate.py
   sudo rm unmht-8.1.0.xpi
-
 }
 
 
