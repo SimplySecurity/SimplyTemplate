@@ -10,4 +10,3 @@ script:
   - "sudo chmod +x SimplyTemplate.py"
   - "sudo ./SimplyTemplate.py -l -v"
   - "sudo ./SimplyTemplate.py -h"
-  - "sudo ./SimplyTemplate.py"
