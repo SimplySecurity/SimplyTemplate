@@ -43,6 +43,7 @@ func_install_requests(){
   sudo apt-get -y install icedove 
   sudo apt-get -y install w3m 
   sudo apt-get install iceweasel
+  sudo apt-get install python python-tk idle python-pmw python-imaging
   # we need to check for front end for this install
   cd /tmp/
   sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi 
