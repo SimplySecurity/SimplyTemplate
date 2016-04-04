@@ -2,7 +2,12 @@ language: python
 python:
   - "2.7"
 script:
-  - "sudo ./Setup.sh"
+  - "sudo easy_install pip"
+  - "sudo apt-get -y install w3m"
+  - "sudo apt-get install iceweasel"
+  - "sudo pip install glob2 --upgrade"
+  - "sudo pip install configparser --upgrade"
+  - "sudo chmod +x SimplyTemplate.py"
   - "sudo ./SimplyTemplate.py -l -v"
   - "sudo ./SimplyTemplate.py -h"
   - "sudo ./SimplyTemplate.py"
