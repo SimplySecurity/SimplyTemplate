@@ -4,7 +4,6 @@ python:
 script:
   - "sudo easy_install pip"
   - "sudo apt-get -y install w3m"
-  - "sudo apt-get install iceweasel"
   - "sudo pip install glob2 --upgrade"
   - "sudo pip install configparser --upgrade"
   - "sudo apt-get install python python-tk idle python-pmw python-imaging"
