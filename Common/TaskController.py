@@ -414,7 +414,7 @@ class Conducter:
         try:
             EmailRender = Task.Render()
             RenderName = Task.RenderName
-            with open(RenderName, "wr") as myfile:
+            with open(RenderName, "w+") as myfile:
                 myfile.write(EmailRender)
             try:
                 # time.sleep(0)
@@ -440,7 +440,7 @@ class Conducter:
             EmailRender = Task.Render()
             # print EmailRender
             RenderName = Task.RenderName
-            with open(RenderName, "wr") as myfile:
+            with open(RenderName, "w+") as myfile:
                 myfile.write(EmailRender)
             try:
                 # time.sleep(0)
