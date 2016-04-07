@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/killswitch-GUI/SimplyTemplate.svg?branch=master)](https://travis-ci.org/killswitch-GUI/SimplyTemplate)
+[![Code Health](https://landscape.io/github/killswitch-GUI/SimplyTemplate/master/landscape.svg?style=flat)](https://landscape.io/github/killswitch-GUI/SimplyTemplate/master)
 # SimplyTemplate
 
 Phishing Template Generation Made Easy. The goal of this project was to hopefully speed up Phishing 
