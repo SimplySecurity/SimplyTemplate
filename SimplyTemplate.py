@@ -5,6 +5,7 @@ import argparse
 import sys
 from Common import TaskController
 
+
 def cli_parser():
     parser = argparse.ArgumentParser(add_help=False, description='''
         Builds out full emails for an OP.
@@ -21,6 +22,7 @@ def cli_parser():
         sys.exit()
     return args.l, args.v
 
+
 def TaskManger():
     # Get all the options passed and pass it to the TaskConducter, this will
     # keep all the processioning on the side.
@@ -31,6 +33,7 @@ def TaskManger():
         Task.ListModules()
         sys.exit(0)
     Task.TaskSelector()
+
 
 def main():
     # instantiate the class
