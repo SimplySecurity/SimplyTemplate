@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
-import os, sys, types, string, textwrap, subprocess, re
+import os
+import sys
+import types
+import string
+import textwrap
+import subprocess
+import re
+
 
 def color(string, status=True, warning=False, bold=True, blue=False, firewall=False, green=False):
     """
@@ -23,9 +30,10 @@ def color(string, status=True, warning=False, bold=True, blue=False, firewall=Fa
     if firewall:
         attr.append('33')
     if blue:
-        #blue
+        # blue
         attr.append('34')
     return '\x1b[%sm%s\x1b[0m' % (';'.join(attr), string)
+
 
 def FormatLong(title, message, frontTab=True, spacing=16):
     """
@@ -39,9 +47,11 @@ def FormatLong(title, message, frontTab=True, spacing=16):
     i = 1
     if len(lines) > 0:
         if frontTab:
-            returnString += "\t%s%s" % (('{0: <%s}'%spacing).format(title), lines[0])
+            returnString += "\t%s%s" % (('{0: <%s}' %
+                                         spacing).format(title), lines[0])
         else:
-            returnString += " %s%s" % (('{0: <%s}'%(spacing-1)).format(title), lines[0])
+            returnString += " %s%s" % (('{0: <%s}' %
+                                        (spacing-1)).format(title), lines[0])
     while i < len(lines):
         if frontTab:
             returnString += "\n\t"+' '*spacing+lines[i]
@@ -50,6 +60,7 @@ def FormatLong(title, message, frontTab=True, spacing=16):
         i += 1
     return returnString
 
+
 def Reindent(s, numSpaces):
     # http://code.activestate.com/recipes/66055-changing-the-indentation-of-a-multi-line-string/
     s = string.split(s, '\n')
@@ -57,24 +68,27 @@ def Reindent(s, numSpaces):
     s = string.join(s, '\n')
     return s
 
+
 def DirectoryListing(directory):
     # Returns a list of dir's of results
     dirs = []
     for (dir, _, files) in os.walk(directory):
         for f in files:
-                path = os.path.join(dir, f)
-                if os.path.exists(path):
-                    dirs.append(path)      
+            path = os.path.join(dir, f)
+            if os.path.exists(path):
+                dirs.append(path)
     return dirs
 
+
 def Exit():
-    p =  " [!] SimplyTemplate now exiting..."
+    p = " [!] SimplyTemplate now exiting..."
     print color(p, warning=True)
     raise SystemExit
 
+
 def SelfUpdate():
     p = " [!] SimplyTemplate now Updating.."
-    print color(p,firewall=True)
+    print color(p, firewall=True)
     try:
         val = subprocess.check_output(("sudo", "git", "pull"))
         print val
@@ -88,7 +102,7 @@ def SelfUpdate():
         print e
         print "Are we root?.."
     p = " [!] Please restart SimplyTemplate.."
-    print color(p,firewall=True)
+    print color(p, firewall=True)
     Exit()
 
 

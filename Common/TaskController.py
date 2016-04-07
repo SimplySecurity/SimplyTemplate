@@ -7,7 +7,6 @@ import sys
 import warnings
 import time
 import subprocess
-import re
 import collections
 from os.path import expanduser
 from Helpers import TemplateEdit
@@ -26,31 +25,33 @@ class Conducter:
         self.Modules = collections.OrderedDict()
         self.Dmodules = collections.OrderedDict()
         self.LoadModules()
-        self.Commands = [   ("use", "Select a template for use"),
-                            ("list", "List loaded Templates"),
-                            ("info", "Display meta data about a module"),
-                            ("search", "Search by Core Options / Sophistication"),
-                            ("update", "Update SimplyTemplate from Git-hub"),
-                            ("help", "Display this menu"),
-                            ("exit", "Exit SimplyTemplate")]
-        self.TemplateInfo =[   ("Name:"),
-                                ("Author"),
-                                ("Type:"),
-                                ("Sophistication:"),
-                                ("SampleImage:"),
-                                ("Info:")]
-        self.TemplateCommands = [   ("set", "Set a option for the Template"),
-                                    ("edit", "Edit a large chunk of template"),
-                                    ("info", "Info about loaded Templates"),
-                                    ("gen", "Generate Template"),
-                                    ("view", "View Sample Template"),
-                                    ("print", "Print to Console Sample Template"),
-                                    ("render", "Render Html of Email"),
-                                    ("back", "Go back to main Menu"),
-                                    ("exit", "Exit SimplyTemplate")]
-        
+        self.Commands = [("use", "Select a template for use"),
+                         ("list", "List loaded Templates"),
+                         ("info", "Display meta data about a module"),
+                         ("search",
+                             "Search by Core Options / Sophistication"),
+                         ("update", "Update SimplyTemplate from Git-hub"),
+                         ("help", "Display this menu"),
+                         ("exit", "Exit SimplyTemplate")]
+        self.TemplateInfo = [("Name:"),
+                             ("Author"),
+                             ("Type:"),
+                             ("Sophistication:"),
+                             ("SampleImage:"),
+                             ("Info:")]
+        self.TemplateCommands = [("set", "Set a option for the Template"),
+                                 ("edit", "Edit a large chunk of template"),
+                                 ("info", "Info about loaded Templates"),
+                                 ("gen", "Generate Template"),
+                                 ("view", "View Sample Template"),
+                                 ("print",
+                                     "Print to Console Sample Template"),
+                                 ("render", "Render Html of Email"),
+                                 ("back", "Go back to main Menu"),
+                                 ("exit", "Exit SimplyTemplate")]
+
         # create required array
-    
+
     def LoadModules(self):
         # loop and assign key and name
         warnings.filterwarnings('ignore', '.*Parent module*',)
@@ -93,13 +94,13 @@ class Conducter:
         for item in self.Commands:
             if item[0] == "search":
                 # print "\t[" + item[0] + "]\t" + item[1]
-                print "\t[{0}]\t{1}".format(item[0],item[1])
+                print "\t[{0}]\t{1}".format(item[0], item[1])
             elif item[0] == "update":
                 # print "\t[" + item[0] + "]\t" + item[1]
-                print "\t[{0}]\t{1}".format(item[0],item[1])
+                print "\t[{0}]\t{1}".format(item[0], item[1])
             else:
                 # print "\t[" + item[0] + "]\t\t" + item[1]
-                print "\t[{0}]\t\t{1}".format(item[0],item[1])
+                print "\t[{0}]\t\t{1}".format(item[0], item[1])
 
     def ModuleSearch(self, SearchTerm):
         '''
@@ -107,7 +108,7 @@ class Conducter:
         '''
         SophisticationList = []
         CoreOptionsList = []
-        NameList = [] 
+        NameList = []
         # check for less than 2x items
         if len(SearchTerm) <= 1:
             # make sure they are using the correct items to search
@@ -176,7 +177,7 @@ class Conducter:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
                 print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
-                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                print Helpers.FormatLong("Module Info:", Task.Info, spacing=16)
                 x += 1
             print ""
         if ModuleList2:
@@ -187,7 +188,7 @@ class Conducter:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
                 print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
-                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                print Helpers.FormatLong("Module Info:", Task.Info, spacing=16)
                 x += 1
             print ""
         if ModuleList3:
@@ -198,7 +199,7 @@ class Conducter:
                 SelectedModule = self.Modules[name]
                 Task = SelectedModule.TemplateModule()
                 print "\n  %s" % (Helpers.color('{0: <24}'.format(name).ljust(50), status=True)) + Helpers.color(Task.CoreOptions.ljust(33), status=True) + "[" + Helpers.color(Task.Sophistication, status=True) + "]\n"
-                print Helpers.FormatLong("Module Info:",Task.Info, spacing=16)
+                print Helpers.FormatLong("Module Info:", Task.Info, spacing=16)
                 x += 1
             print ""
 
@@ -242,7 +243,9 @@ class Conducter:
             print " Setting\t\tValue Set\t\t\tDescription of Setting"
             print " -------\t\t---------\t\t\t----------------------"
             for key in sorted(Task.RequiredOptions.iterkeys()):
-                # print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0: <8}'.format(Task.RequiredOptions[key][0]), Task.RequiredOptions[key][1])
+                # print " %s\t%s\t\t%s" % ('{0: <16}'.format(key), '{0:
+                # <8}'.format(Task.RequiredOptions[key][0]),
+                # Task.RequiredOptions[key][1])
                 print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
         except Exception as e:
             print e
@@ -266,7 +269,7 @@ class Conducter:
                 elif task == "Task.SampleImage":
                     print "\t" + item + "\t\t" + eval(task)
                 elif task == "Task.Info":
-                    print Helpers.FormatLong("Info:",Task.Info, spacing=24)
+                    print Helpers.FormatLong("Info:", Task.Info, spacing=24)
                 else:
                     print "\t" + item + "\t\t\t" + eval(task)
             # https://github.com/Veil-Framework/Veil-Evasion/blob/master/modules/common/controller.py
@@ -301,18 +304,18 @@ class Conducter:
             return
 
     def ModuleHelp(self):
-            print "\tAvailable Commands:"
-            print "\t-----------------------------------------"
-            for item in self.Commands:
-                if item[0] == "update":
-                    print "\t[" + item[0] + "]\t" + item[1]
-                else:
-                    print "\t[" + item[0] + "]\t\t" + item[1]
-            print "\n\tAvailable Template Commands:"
-            print "\t-----------------------------------------"
-            for item in self.TemplateCommands:
+        print "\tAvailable Commands:"
+        print "\t-----------------------------------------"
+        for item in self.Commands:
+            if item[0] == "update":
+                print "\t[" + item[0] + "]\t" + item[1]
+            else:
                 print "\t[" + item[0] + "]\t\t" + item[1]
-            return
+        print "\n\tAvailable Template Commands:"
+        print "\t-----------------------------------------"
+        for item in self.TemplateCommands:
+            print "\t[" + item[0] + "]\t\t" + item[1]
+        return
 
     def ModuleCommands(self):
         print Helpers.color("\n Available Template Commands:\n", status=True)
@@ -332,11 +335,11 @@ class Conducter:
             else:
                 print Helpers.color(" [!] Is a default image viewer installed?")
 
-    def TemplateSet(self, Task, Value, Raw):     
+    def TemplateSet(self, Task, Value, Raw):
         try:
             option = Value[1]
             if Value[1] not in Task.RequiredOptions:
-                print Helpers.color(" [!] Invalid option specified.", firewall=True)  
+                print Helpers.color(" [!] Invalid option specified.", firewall=True)
 
             else:
                 Raw = Raw.strip(Value[0])
@@ -361,11 +364,11 @@ class Conducter:
                 if Value[1] not in Task.RequiredText:
                     print Helpers.color(" [!] Invalid option specified.", firewall=True)
                 else:
-                     Text = Task.RequiredText[Value[1]][0]
-                     raw = TemplateEdit.root(Text)
-                     if raw:
+                    Text = Task.RequiredText[Value[1]][0]
+                    raw = TemplateEdit.root(Text)
+                    if raw:
                         Task.RequiredText[Value[1]][0] = raw
-                     return
+                    return
                 # raw = TemplateEdit.root(str(self.RequiredText["TextBlock1"][0]))
         except Exception as e:
             print e
@@ -378,7 +381,7 @@ class Conducter:
         while True:
             try:
                 p = " [>] Output Location (Default ~/Desktop/):"
-                a = raw_input(Helpers.color(p,status=True))
+                a = raw_input(Helpers.color(p, status=True))
                 if a:
                     return a
                 else:
@@ -397,7 +400,7 @@ class Conducter:
             try:
                 name = Task.OutputName
                 p = " [>] Output Name (Default: " + name + "):"
-                a = raw_input(Helpers.color(p,status=True))
+                a = raw_input(Helpers.color(p, status=True))
                 if a:
                     return a
                 else:
@@ -419,9 +422,10 @@ class Conducter:
             try:
                 # time.sleep(0)
                 temp = "\n"
-                temp += subprocess.check_output(["w3m", "-dump", "-T", "text/html", RenderName])
+                temp += subprocess.check_output(["w3m",
+                                                 "-dump", "-T", "text/html", RenderName])
                 print Helpers.Reindent(temp, 1)
-                #time.sleep(5)
+                # time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is w3m installed (run Setup.sh)?")
                 print e
@@ -448,7 +452,7 @@ class Conducter:
                     subprocess.check_call(["icedove", RenderName])
                 else:
                     temp = subprocess.check_call(["iceweasel", RenderName])
-                #time.sleep(5)
+                # time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a default browser installed?")
             # now remove temp file
@@ -471,7 +475,7 @@ class Conducter:
                     subprocess.check_call(["icedove", "-File", Path])
                 else:
                     subprocess.check_call(["iceweasel", Path])
-                #time.sleep(5)
+                # time.sleep(5)
             except Exception as e:
                 print Helpers.color(" [!] Is a Iceweasel browser installed? (Run Setup)")
         except Exception as e:
@@ -491,7 +495,7 @@ class Conducter:
                 print " %s%s%s" % ('{0: <16}'.format(key).ljust(23), '{0: <8}'.format(Task.RequiredOptions[key][0]).ljust(32), Task.RequiredOptions[key][1])
             try:
                 if Task.RequiredText:
-                    print Helpers.color("\n Template TextEdit Options:\n", status=True)  
+                    print Helpers.color("\n Template TextEdit Options:\n", status=True)
                     print " Setting\t\tValue Set\t\t\tDescription of Setting"
                     print " -------\t\t---------\t\t\t----------------------"
                     for key in sorted(Task.RequiredText.iterkeys()):
@@ -529,9 +533,10 @@ class Conducter:
            File Location: \t\t{2}
            Email File:\t\t\t{3}
         """.format(Helpers.color(p, green=True), Task.Name, FileLocation, FileName)
-        print line 
+        print line
         # Now check if they want to open the file
-        p = Helpers.color(" [>] ", status=True) + "Would you like to view the generated template? (y) or (n): "
+        p = Helpers.color(
+            " [>] ", status=True) + "Would you like to view the generated template? (y) or (n): "
         while True:
             a = raw_input(p)
             if a.lower() == "y":
@@ -539,7 +544,8 @@ class Conducter:
                 break
             if a.lower() == "n":
                 break
-        p = Helpers.color(" [>] ", status=True) + "Would you like to return to Current Module? (y) or (n): "
+        p = Helpers.color(
+            " [>] ", status=True) + "Would you like to return to Current Module? (y) or (n): "
         while True:
             a = raw_input(p)
             if a.lower() == "y":
@@ -547,7 +553,7 @@ class Conducter:
                 break
             if a.lower() == "n":
                 self.TaskSelector()
-        print line 
+        print line
 
     ######################################
     #                                    #
@@ -572,16 +578,16 @@ class Conducter:
             cmddict['use'] = ""
             # add list command
             cmddict['list'] = ""
-            # add info command 
+            # add info command
             cmddict['info'] = ""
-            # add search command 
+            # add search command
             search = ['sophistication', 'options', 'name']
             cmddict['search'] = search
             # add update command
             cmddict['update'] = ""
             # add help command
             cmddict['help'] = ""
-            # add exit command 
+            # add exit command
             cmddict['exit'] = ""
             return cmddict
         except Exception as e:
@@ -589,7 +595,7 @@ class Conducter:
             print e
 
     def PromptSelection(self):
-        # setup module commands and required lists 
+        # setup module commands and required lists
         cmddict = self.MainCmdLoopCommands()
         # now call cmd loop
         CmdLoop.start_loop(cmddict)
@@ -650,12 +656,12 @@ class Conducter:
             # add in set commands
             for key in sorted(Task.RequiredOptions.iterkeys()):
                 setlist.append(key)
-            cmddict['set']= setlist
+            cmddict['set'] = setlist
             # add in edit command
             try:
                 for key in sorted(Task.RequiredText.iterkeys()):
                     editlist.append(key)
-                cmddict['edit']= editlist
+                cmddict['edit'] = editlist
             except:
                 # edit is not a required command
                 pass
