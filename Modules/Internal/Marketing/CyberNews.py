@@ -32,7 +32,7 @@ class TemplateModule:
             "FromFirstName": ["Jim", "Contacts First Name"],
             "FromProfileUrl": ["http://k.com", "Linkedin Full Profile URL"],
             "FromTitle": ["CEO, ATD", "Contacts Full Title"],
-            "FromOrg": ["Veris Group, LLC", "Contacts Company"],
+            "FromOrg": ["YourMom", LLC", "Contacts Company"],
             "GroupName": ["Cyber Cyber Cyber", "Requested Group to Join"],
             "GroupUrl" : ["""%URL%""", "Custom GroupURL or CS URL"],
             "ProfilePic": ["http://tinyurl.com/oewvyo7", "Custom GroupURL or CS URL"],
