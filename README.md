@@ -20,7 +20,6 @@ Major Call Outs!:
 ----------------------------------------------
 * Chris Ross [@xorrior]
 * Steve Borosh [@rvrsh3ll] -- [web] [www.rvrsh3ll.net](http://www.rvrsh3ll.net/blog/)
-* ATD Team [@VerisGroup] -- [web] [https://www.verisgroup.com/adaptive-threat-division/](https://www.verisgroup.com/adaptive-threat-division/)
 
 
 A few small benefits:
