@@ -197,7 +197,7 @@ root@kali:~/Desktop/Simplytemplate# ./Setup.sh
  -------		---------			----------------------
  FromFirstName          Jim                             Contacts First Name
  FromFullName           Jim Bob                         Contacts Full Name
- FromOrg                Veris Group, LLC                Contacts Company
+ FromOrg                MOM, LLC                        Contacts Company
  FromProfileUrl         http://k.com                    Linkedin Full Profile URL
  FromTitle              CEO, ATD                        Contacts Full Title
  GroupName              Cyber Cyber Cyber               Requested Group to Join
