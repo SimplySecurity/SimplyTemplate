@@ -17,7 +17,7 @@ from Helpers import Helpers
 class Conducter:
 
     def __init__(self):
-        self.version = "v0.1"
+        self.version = "v1.0.0"
         # Create dictionaries of supported modules
         # empty until stuff loaded into them
         # stolen from Veil :)
