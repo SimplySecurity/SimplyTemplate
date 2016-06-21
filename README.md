@@ -47,6 +47,9 @@ Email Rendering:
 - eml == Files can be outputed via .EML to open them directly in Icedove or Outlook
 - mht == MHTML is the Mail Html Markup used and can directly rendered in Word/IE or Iceweasel via plugin
 
+# Tips, Tricks, Notes
+The following is a collection trips and tricks to get your email in!
+
 ## Get Started
 Please RUN the simple Setup Bash script!!!
 ```Bash
