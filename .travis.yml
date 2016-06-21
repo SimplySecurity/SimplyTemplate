@@ -2,6 +2,9 @@ language: python
 python:
   - "2.7"
 script:
+  - pip install coveralls
+  - pip install coverage
+  - pip install nose
   - "sudo easy_install pip"
   - "sudo apt-get -y install w3m"
   - "sudo pip install glob2 --upgrade"
