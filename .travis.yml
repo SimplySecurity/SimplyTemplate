@@ -13,3 +13,5 @@ script:
   - "sudo chmod +x SimplyTemplate.py"
   - "sudo ./SimplyTemplate.py -l -v"
   - "sudo ./SimplyTemplate.py -h"
+after_success:
+  - coveralls
