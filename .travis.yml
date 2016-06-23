@@ -5,6 +5,7 @@ script:
   - pip install coveralls
   - pip install coverage
   - pip install nose
+  - pip install glob2
   - "sudo easy_install pip"
   - "sudo apt-get -y install w3m"
   - "sudo pip install glob2 --upgrade"
