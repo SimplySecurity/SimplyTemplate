@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/killswitch-GUI/SimplyTemplate.svg?branch=master)](https://travis-ci.org/killswitch-GUI/SimplyTemplate)
 [![Code Health](https://landscape.io/github/killswitch-GUI/SimplyTemplate/master/landscape.svg?style=flat)](https://landscape.io/github/killswitch-GUI/SimplyTemplate/master)
+[![Coverage Status](https://coveralls.io/repos/github/killswitch-GUI/SimplyTemplate/badge.svg?branch=master)](https://coveralls.io/github/killswitch-GUI/SimplyTemplate?branch=master)
 # SimplyTemplate
 
 Phishing Template Generation Made Easy. The goal of this project was to hopefully speed up Phishing 
@@ -46,6 +47,9 @@ Email Rendering:
 - Html == This was used by some to view the HTML markup but CSS does not render correctly (Basic Templates)
 - eml == Files can be outputed via .EML to open them directly in Icedove or Outlook
 - mht == MHTML is the Mail Html Markup used and can directly rendered in Word/IE or Iceweasel via plugin
+
+# Tips, Tricks, Notes
+The following is a collection trips and tricks to get your email in!
 
 ## Get Started
 Please RUN the simple Setup Bash script!!!
