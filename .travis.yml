@@ -1,10 +1,11 @@
 language: python
 python:
   - "2.7"
-install:
+script:
   - pip install coveralls
   - pip install coverage
   - pip install nose
+  - pip install glob2
   - "sudo easy_install pip"
   - "sudo apt-get -y install w3m"
   - "sudo pip install glob2 --upgrade"
@@ -13,7 +14,6 @@ install:
   - "sudo chmod +x SimplyTemplate.py"
   - "sudo ./SimplyTemplate.py -l -v"
   - "sudo ./SimplyTemplate.py -h"
-script:
   - nosetests --with-coverage
 after_success:
   - coveralls
