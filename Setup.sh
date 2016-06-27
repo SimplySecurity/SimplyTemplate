@@ -38,12 +38,12 @@ func_install_requests(){
   #Insure we have the latest requests module in python
   #sudo apt-get -q update
   #sudo apt-get -q upgrade 
-  sudo git pull
+  sudo git pull 
   sudo easy_install pip
   sudo apt-get -y install icedove 
   sudo apt-get -y install w3m 
-  sudo apt-get install iceweasel
-  sudo apt-get install python python-tk idle python-pmw python-imaging
+  sudo apt-get install iceweasel -y 
+  sudo apt-get install python python-tk idle python-pmw python-imaging -y
   # we need to check for front end for this install
   cd /tmp/
   sudo wget http://www.unmht.org/unmht/files/unmht-8.1.0.xpi 
